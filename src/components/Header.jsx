@@ -40,29 +40,34 @@ const Header = () => {
                 }`}
         >
             <div className="container flex justify-between items-center">
-                {/* Logo */}
-                <Link to="/" className="flex items-center">
-                    <img src={logo} alt="GTM 360" className={`transition-all duration-300 ${isScrolled ? 'h-12 md:h-16' : 'h-14 md:h-24'}`} />
-                </Link>
+                {/* Left Group: Logo + Desktop Nav */}
+                <div className="flex items-center gap-12">
+                    <Link to="/" className="flex items-center">
+                        <img src={logo} alt="GTM 360" className={`transition-all duration-300 ${isScrolled ? 'h-12 md:h-16' : 'h-14 md:h-24'}`} />
+                    </Link>
 
-                {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center space-x-8">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.title}
-                            to={link.path}
-                            className="text-sm font-medium text-gray-700 hover:text-[var(--color-primary)] transition-colors"
-                        >
-                            {link.title}
-                        </Link>
-                    ))}
+                    <nav className="hidden md:flex items-center space-x-8">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.title}
+                                to={link.path}
+                                className="text-sm font-medium text-gray-700 hover:text-[var(--color-primary)] transition-colors"
+                            >
+                                {link.title}
+                            </Link>
+                        ))}
+                    </nav>
+                </div>
+
+                {/* Right Group: CTA */}
+                <div className="hidden md:block">
                     <Link
                         to="/contact"
-                        className="text-sm font-medium text-[var(--color-primary)] border border-[var(--color-primary)] px-4 py-2 rounded hover:bg-[var(--color-primary)] hover:text-white transition-colors"
+                        className="text-sm font-medium text-[var(--color-primary)] border border-[var(--color-primary)] px-6 py-3 rounded hover:bg-[var(--color-primary)] hover:text-white transition-colors"
                     >
-                        Contact
+                        Book Diagnostic
                     </Link>
-                </nav>
+                </div>
 
                 {/* Mobile Menu Toggle */}
                 <button
