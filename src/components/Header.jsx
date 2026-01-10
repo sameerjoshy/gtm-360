@@ -43,7 +43,7 @@ const Header = () => {
                 {/* Left Group: Logo + Desktop Nav */}
                 <div className="flex items-center gap-12">
                     <Link to="/" className="flex items-center">
-                        <img src={logo} alt="GTM 360" className={`transition-all duration-300 ${isScrolled ? 'h-12 md:h-16' : 'h-14 md:h-24'}`} />
+                        <img src={logo} alt="GTM 360" className={`transition-all duration-300 ${isScrolled ? 'h-14 md:h-20' : 'h-16 md:h-28'}`} />
                     </Link>
 
                     <nav className="hidden md:flex items-center space-x-8">
