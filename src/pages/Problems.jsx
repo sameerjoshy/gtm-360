@@ -57,9 +57,7 @@ const Problems = () => {
                             </p>
                         </div>
 
-                        import gtmModel from '../assets/schematics/gtm_model.png';
 
-                        // ...
 
                         {/* System Schematic */}
                         <div className="bg-white p-8 rounded-sm shadow-sm flex items-center justify-center">

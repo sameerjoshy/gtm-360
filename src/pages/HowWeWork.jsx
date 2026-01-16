@@ -95,9 +95,7 @@ const HowWeWork = () => {
                                 The goal is not analysis for its own sake, but to surface where the system is quietly constraining progress.
                             </p>
                         </div>
-                        import diagnosisFlow from '../assets/schematics/diagnosis.png';
 
-                        // ...
 
                         {/* Schematic */}
                         <div className="border border-gray-200 p-8 rounded-sm bg-gray-50 flex justify-center items-center">
