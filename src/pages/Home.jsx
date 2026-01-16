@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import systemFlow from '../assets/schematics/system_flow.png';
+import RevenueCalculator from '../components/tools/RevenueCalculator';
 
 const Home = () => {
     return (
@@ -86,6 +87,13 @@ const Home = () => {
                             </div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* MICRO-CONVERSION: CALCULATOR */}
+            <section className="section py-20 bg-gray-50">
+                <div className="container max-w-4xl">
+                    <RevenueCalculator />
                 </div>
             </section>
 

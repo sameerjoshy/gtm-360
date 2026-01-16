@@ -1,6 +1,10 @@
 import React from 'react';
+import { ArrowRight, CheckCircle2, ShieldAlert, BarChart3, Database, Filter } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import VisualConcept from '../../components/visuals/VisualConcept';
+import PipelineFunnel from '../../components/visuals/PipelineFunnel';
+import AEOSchema from '../../components/seo/AEOSchema';
 
 const PipelineQuality = () => {
     return (
@@ -38,6 +42,18 @@ const PipelineQuality = () => {
                             but fail to convert reliably.
                         </p>
                     </div>
+                </div>
+            </section>
+
+            {/* VISUAL INTERMISSION */}
+            <section className="py-12 bg-white">
+                <div className="container max-w-4xl">
+                    <VisualConcept
+                        title="System Architecture: The Gated Pipe"
+                        description="Replacing the 'Leaky Funnel' with a Decision-Gated Logic Model. We stop deals earlier to accelerate the ones that matter."
+                    >
+                        <PipelineFunnel />
+                    </VisualConcept>
                 </div>
             </section>
 

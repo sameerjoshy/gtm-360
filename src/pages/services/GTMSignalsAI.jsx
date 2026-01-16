@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import VisualConcept from '../../components/visuals/VisualConcept';
+import SignalNoiseDiagram from '../../components/visuals/SignalNoiseDiagram';
+import AEOSchema from '../../components/seo/AEOSchema';
 
 const GTMSignalsAI = () => {
     return (
@@ -56,6 +59,31 @@ const GTMSignalsAI = () => {
                             </li>
                         ))}
                     </ul>
+                </div>
+            </section>
+
+            <AEOSchema
+                type="HowTo"
+                data={{
+                    name: "How to Align GenAI to GTM Strategy",
+                    description: "Using AI to filter signal noise rather than amplify activity.",
+                    steps: [
+                        { title: "Audit the Signal Chain", text: "Map every tool in the stack to a specific decision it supports. Cut everything else." },
+                        { title: "Define 'True' Signals", text: "Distinguish between vanity metrics (clicks) and revenue signals (intent data)." },
+                        { title: "Automate Constraints, Not Just Copy", text: "Use AI to flag deals that violate process rules, not just to write emails." }
+                    ]
+                }}
+            />
+
+            {/* VISUAL INTERMISSION */}
+            <section className="py-12 bg-white">
+                <div className="container max-w-4xl">
+                    <VisualConcept
+                        title="System Architecture: Filtered Signal"
+                        description="Filtering the noise of modern data stacks to isolate the few signals that actually predict revenue."
+                    >
+                        <SignalNoiseDiagram />
+                    </VisualConcept>
                 </div>
             </section>
 

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import ReactGA from 'react-ga4';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import IntelligenceLayer from './components/analytics/IntelligenceLayer';
 
 // Lazy load pages for performance
 const Home = lazy(() => import('./pages/Home'));
@@ -19,6 +20,7 @@ const PipelineQuality = lazy(() => import('./pages/services/PipelineQuality'));
 const ForecastingGovernance = lazy(() => import('./pages/services/ForecastingGovernance'));
 const GTMSignalsAI = lazy(() => import('./pages/services/GTMSignalsAI'));
 const InsightPost = lazy(() => import('./pages/insights/InsightPost'));
+const CaseStudyPost = lazy(() => import('./pages/insights/CaseStudyPost'));
 const ThankYou = lazy(() => import('./pages/ThankYou'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
@@ -46,6 +48,7 @@ function App() {
     return (
         <Router>
             <RouteTracker />
+            <IntelligenceLayer />
             <div className="min-h-screen flex flex-col font-sans text-gray-900 bg-white">
                 <Header />
                 <main className="flex-grow pt-36"> {/* Adjust for fixed header height */}
@@ -65,6 +68,7 @@ function App() {
                             <Route path="/services/forecasting-governance" element={<ForecastingGovernance />} />
                             <Route path="/services/gtm-signals-and-ai" element={<GTMSignalsAI />} />
                             <Route path="/insights" element={<Insights />} />
+                            <Route path="/insights/case-studies/:slug" element={<CaseStudyPost />} />
                             <Route path="/insights/:slug" element={<InsightPost />} />
                             <Route path="/thank-you" element={<ThankYou />} />
                             <Route path="/privacy" element={<Privacy />} />

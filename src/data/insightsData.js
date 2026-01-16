@@ -148,3 +148,200 @@ export const insights = {
         }
     }
 };
+
+export const caseStudies = {
+    "fixing-the-wrong-problem": {
+        slug: "/insights/case-studies/fixing-the-wrong-problem",
+        title: "When Fixing the “Obvious” Problem Made Growth Worse",
+        subtitle: "A real-world example of how execution pressure compounded failure — until the underlying GTM misdiagnosis was corrected.",
+        thesis: "Execution pressure compounded failure until the underlying GTM misdiagnosis was corrected.",
+        description: "A diagnostic case study showing how fixing the wrong GTM problem compounded failure — and what changed once the real constraint was identified.",
+        category: "Diagnostic Case Study",
+        readTime: "8 min read",
+        sections: {
+            context: `
+                <p>This case involved a B2B company with a mature sales organization, a functioning pipeline, and steady inbound demand.</p>
+                <p>On the surface, the situation looked familiar:</p>
+                <ul>
+                    <li>growth had slowed</li>
+                    <li>leadership felt execution quality had dropped</li>
+                    <li>teams were under pressure to “do more”</li>
+                </ul>
+                <p>There was no shortage of effort, tooling, or activity.</p>
+                <p>What was missing was clarity.</p>
+            `,
+            initialBelief: `
+                <p>Leadership believed the problem was execution drift.</p>
+                <p>Specifically:</p>
+                <ul>
+                    <li>sales teams were not converting enough opportunities</li>
+                    <li>pipeline coverage looked sufficient, but outcomes lagged</li>
+                    <li>deal velocity felt slower than it should be</li>
+                </ul>
+                <p>The prevailing assumption was simple:</p>
+                <p><em>“We need tighter sales execution and more pipeline focus.”</em></p>
+                <p>This belief drove the next set of actions.</p>
+            `,
+            whyReasonable: `
+                <p>The misdiagnosis made sense at the time.</p>
+                <ul>
+                    <li>CRM dashboards showed pipeline volume</li>
+                    <li>Sales activity levels were high</li>
+                    <li>Previous growth phases had responded well to execution pressure</li>
+                    <li>Leadership had solved similar slowdowns this way before</li>
+                </ul>
+                <p>Nothing looked obviously broken — which made the issue harder to identify.</p>
+            `,
+            diagnosticReveal: `
+                <p>The diagnostic surfaced a different constraint entirely.</p>
+                <p>The core issue was not sales execution.</p>
+                <p>It was a system-level misalignment between:</p>
+                <ul>
+                    <li>who the company believed it was selling to</li>
+                    <li>how deals were being qualified</li>
+                    <li>and how buyers were actually making decisions</li>
+                </ul>
+                <p>As a result:</p>
+                <ul>
+                    <li>“qualified” opportunities entered the pipeline too early</li>
+                    <li>late-stage deals stalled due to unresolved buyer ownership</li>
+                    <li>sales effort increased in areas that could not convert</li>
+                </ul>
+                <p>The system was functioning exactly as designed.</p>
+                <p>The design itself was the problem.</p>
+            `,
+            whatChanged: `
+                <p>Once the real constraint was understood, the focus shifted.</p>
+                <p>Instead of pushing harder on execution:</p>
+                <ul>
+                    <li>qualification logic was redefined around buyer ownership</li>
+                    <li>deal stages were aligned to real decision points</li>
+                    <li>teams were encouraged to exit deals earlier, not carry them longer</li>
+                    <li>leadership stopped measuring success by activity volume alone</li>
+                </ul>
+                <p>Several initiatives were deliberately stopped.</p>
+                <p>More effort was not the answer — better sequencing was.</p>
+            `,
+            outcome: `
+                <p>The first visible change was not growth metrics.</p>
+                <p>It was decision clarity.</p>
+                <ul>
+                    <li>sales conversations became more consistent</li>
+                    <li>late-stage surprises reduced</li>
+                    <li>leadership regained confidence in what the pipeline represented</li>
+                    <li>teams spent less time chasing progress and more time qualifying reality</li>
+                </ul>
+                <p>Growth followed later — but only after the system was corrected.</p>
+            `,
+            whyMatters: `
+                <p>This pattern appears frequently in B2B GTM systems.</p>
+                <p>When execution pressure increases without revisiting diagnosis:</p>
+                <ul>
+                    <li>effort compounds the wrong behavior</li>
+                    <li>tools amplify confusion</li>
+                    <li>teams burn energy without learning</li>
+                </ul>
+                <p>Fixing the wrong problem well still produces bad outcomes.</p>
+            `
+        },
+        relatedLinks: [
+            { text: "System Component: Pipeline Quality Repair", url: "/services/pipeline-quality" },
+            { text: "Common Symptoms: See the 8 patterns", url: "/problems" }
+        ]
+    },
+    "when-ai-created-noise-not-clarity": {
+        slug: "/insights/case-studies/when-ai-created-noise-not-clarity",
+        title: "When AI Increased Activity but Reduced GTM Clarity",
+        subtitle: "A real example of how automation amplified confusion — until the underlying decision system was corrected.",
+        thesis: "Automation amplified noise because decision logic was never defined.",
+        description: "A diagnostic case study showing how AI and dashboards amplified GTM confusion instead of improving decisions — and what corrected it.",
+        category: "Diagnostic Case Study",
+        readTime: "7 min read",
+        sections: {
+            context: `
+                <p>This case involved a B2B company that had invested heavily in RevOps tooling and AI-assisted analytics.</p>
+                <p>Leadership believed visibility was the problem:</p>
+                <ul>
+                    <li>more dashboards were built</li>
+                    <li>more signals were tracked</li>
+                    <li>more automation was introduced</li>
+                </ul>
+                <p>On paper, the GTM system looked increasingly sophisticated.</p>
+                <p>In practice, decision-making deteriorated.</p>
+            `,
+            initialBelief: `
+                <p>The organization believed the issue was insufficient insight.</p>
+                <p>Specifically:</p>
+                <ul>
+                    <li>leaders felt they lacked real-time visibility</li>
+                    <li>frontline teams wanted clearer prioritization</li>
+                    <li>executives believed better data would improve judgment</li>
+                </ul>
+                <p>The assumption was straightforward:</p>
+                <p><em>“If we can see more, we can decide better.”</em></p>
+                <p>This belief drove a rapid expansion of tools and AI usage.</p>
+            `,
+            whyReasonable: `
+                <p>The logic appeared sound.</p>
+                <ul>
+                    <li>dashboards were technically accurate</li>
+                    <li>AI surfaced large volumes of signals</li>
+                    <li>activity metrics increased across the board</li>
+                    <li>reporting cadence improved</li>
+                </ul>
+                <p>From a tooling perspective, the system looked mature.</p>
+                <p>But clarity did not improve.</p>
+            `,
+            diagnosticReveal: `
+                <p>The diagnostic uncovered a deeper issue.</p>
+                <p>The problem was not lack of insight.</p>
+                <p>It was the absence of a decision model.</p>
+                <p>Specifically:</p>
+                <ul>
+                    <li>signals were not tied to decisions</li>
+                    <li>metrics existed without consequence</li>
+                    <li>AI amplified data that had no governing logic</li>
+                </ul>
+                <p>As a result:</p>
+                <ul>
+                    <li>teams reacted to noise</li>
+                    <li>leaders debated dashboards instead of decisions</li>
+                    <li>automation accelerated misalignment</li>
+                </ul>
+                <p>AI was functioning correctly.</p>
+                <p>The system it was amplifying was not.</p>
+            `,
+            whatChanged: `
+                <p>The corrective action was not adding better AI.</p>
+                <p>Instead:</p>
+                <ul>
+                    <li>signals were explicitly mapped to decisions</li>
+                    <li>most dashboards were retired</li>
+                    <li>leadership defined which metrics mattered — and why</li>
+                    <li>AI usage was constrained to amplify only validated signals</li>
+                </ul>
+                <p>Less data produced better judgment.</p>
+            `,
+            outcome: `
+                <p>The immediate improvement was not efficiency.</p>
+                <p>It was control.</p>
+                <ul>
+                    <li>leadership conversations became focused</li>
+                    <li>teams understood what signals required action</li>
+                    <li>automation supported judgment instead of replacing it</li>
+                    <li>confidence returned — without adding tools</li>
+                </ul>
+                <p>Only after this correction did AI begin to add leverage.</p>
+            `,
+            whyMatters: `
+                <p>This pattern is increasingly common.</p>
+                <p>AI does not fix GTM systems.<br/>It magnifies them.</p>
+                <p>When the underlying decision logic is weak,<br/>automation compounds confusion at scale.</p>
+            `
+        },
+        relatedLinks: [
+            { text: "System Component: GTM Signals & AI", url: "/services/gtm-signals-and-ai" },
+            { text: "Common Symptoms: See the 8 patterns", url: "/problems" }
+        ]
+    }
+};

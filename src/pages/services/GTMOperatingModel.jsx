@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import VisualConcept from '../../components/visuals/VisualConcept';
+import OperatingModelDiagram from '../../components/visuals/OperatingModelDiagram';
+import AEOSchema from '../../components/seo/AEOSchema';
 
 const GTMOperatingModel = () => {
     return (
@@ -60,6 +63,31 @@ const GTMOperatingModel = () => {
                             </li>
                         ))}
                     </ul>
+                </div>
+            </section>
+
+            <AEOSchema
+                type="HowTo"
+                data={{
+                    name: "How to Realign a GTM Operating Model",
+                    description: "Moving from functional silos to a unified revenue system.",
+                    steps: [
+                        { title: "Map the Decision Flow", text: "Identify who owns specific GTM decisions and where friction exists." },
+                        { title: "Define the System Pulse", text: "Establish a single operating rhythm (cadence) that connects Strategy to Execution." },
+                        { title: "Clarify Trade-offs", text: "Explicitly define what the organization will NOT do to protect focus." }
+                    ]
+                }}
+            />
+
+            {/* VISUAL INTERMISSION */}
+            <section className="py-12 bg-white">
+                <div className="container max-w-4xl">
+                    <VisualConcept
+                        title="System Architecture: Unified Revenue OS"
+                        description="Transitioning from disconnected functional silos to a single, unified operating rhythm."
+                    >
+                        <OperatingModelDiagram />
+                    </VisualConcept>
                 </div>
             </section>
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
+import VisualConcept from '../../components/visuals/VisualConcept';
+import ForecastingDiagram from '../../components/visuals/ForecastingDiagram';
+import AEOSchema from '../../components/seo/AEOSchema';
 
 const ForecastingGovernance = () => {
     return (
@@ -56,6 +59,31 @@ const ForecastingGovernance = () => {
                             </li>
                         ))}
                     </ul>
+                </div>
+            </section>
+
+            <AEOSchema
+                type="HowTo"
+                data={{
+                    name: "How to Establish Revenue Governance",
+                    description: "Replacing opinion-based forecasting with evidence-based logic.",
+                    steps: [
+                        { title: "Define Signal Evidence", text: "Stop asking 'how do you feel' and start asking 'what evidence do we have' (e.g., procurement engagement)." },
+                        { title: "Separate Forecast from Commit", text: "Distinguish between the statistical probability of a deal and the rep's commitment to close it." },
+                        { title: "Install Inspect Cadence", text: "Implement a weekly ridge-walk of the pipeline to identify stalled deals early." }
+                    ]
+                }}
+            />
+
+            {/* VISUAL INTERMISSION */}
+            <section className="py-12 bg-white">
+                <div className="container max-w-4xl">
+                    <VisualConcept
+                        title="System Architecture: Evidence-Based Forecast"
+                        description="Replacing opinion and hope with mathematical evidence. From a cloud of guessing to a grid of certainty."
+                    >
+                        <ForecastingDiagram />
+                    </VisualConcept>
                 </div>
             </section>
 
