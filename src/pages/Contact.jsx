@@ -44,9 +44,9 @@ const Contact = () => {
 
 // HubSpot Form Component
 const HubSpotForm = () => {
-    // REPLACE THESE WITH YOUR ACTUAL HUBSPOT IDS
-    const PORTAL_ID = '4521369'; // Placeholder
-    const FORM_ID = 'd7e8a9b0-c1d2-e3f4-g5h6-i7j8k9l0m1n2'; // Placeholder
+    // Configuration from your provided form link
+    const PORTAL_ID = '244225374';
+    const FORM_ID = 'b631cbcc-1f01-47f9-926c-715a4cb2cd8a';
 
     const [formData, setFormData] = React.useState({
         firstname: '',
