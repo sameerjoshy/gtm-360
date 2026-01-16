@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { Helmet } from 'react-helmet-async';
+import founderAbstract from '../assets/founder_abstract.png';
 
 const About = () => {
     return (
@@ -39,9 +39,14 @@ const About = () => {
                 <div className="container">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                         <div>
-                            {/* Placeholder for Founder Image */}
-                            <div className="bg-gray-200 aspect-square rounded-sm mb-6 flex items-center justify-center text-gray-400">
-                                <span className="text-sm uppercase tracking-widest">Founder Portrait</span>
+                            {/* Founder Image */}
+                            <div className="relative">
+                                <div className="absolute -inset-4 bg-gray-100 rounded-sm -z-10 transform rotate-2"></div>
+                                <img
+                                    src={founderAbstract}
+                                    alt="Revenue Architecture - Founder Perspective"
+                                    className="w-full h-auto rounded-sm shadow-lg grayscale hover:grayscale-0 transition-all duration-500"
+                                />
                             </div>
                         </div>
                         <div>

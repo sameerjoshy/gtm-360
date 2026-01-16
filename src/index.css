@@ -4,16 +4,12 @@
 @tailwind utilities;
 
 :root {
-  /* Brand Colors */
-  --color-primary: #1A237E;
-  /* Deep Indigo - Adjust based on actual logo */
-  --color-secondary: #F6F7F9;
-  /* Soft Neutral Grey */
+  /* Brand Colors - Aligned with Tailwind */
+  --color-primary: #0A192F;
+  --color-secondary: #F1F5F9;
   --color-text-main: #1F2937;
-  /* Charcoal/Near-black */
   --color-text-muted: #6B7280;
-  --color-accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  /* Muted violet/blue */
+  --color-accent: #4F46E5;
 
   /* Typography */
   --font-main: 'Inter', sans-serif;
@@ -35,6 +31,7 @@ body {
   color: var(--color-text-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -47,16 +44,17 @@ h6 {
   line-height: 1.2;
   color: var(--color-primary);
   margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  /* Tighter layout for premium feel */
 }
 
 h1 {
   font-size: 3.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 h2 {
-  font-size: 2.5rem;
-  letter-spacing: -0.01em;
+  font-size: 2.25rem;
 }
 
 h3 {
@@ -66,7 +64,7 @@ h3 {
 a {
   text-decoration: none;
   color: inherit;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 @layer components {
@@ -78,17 +76,21 @@ a {
 
   .btn {
     display: inline-flex;
-    padding: 0.75rem 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
     font-weight: 500;
-    border-radius: 4px;
-    transition: all 0.2s;
+    border-radius: 2px;
+    /* Sharper corners for enterprise feel */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
   }
 
-  .btn-primary {
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
+  .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .section {
