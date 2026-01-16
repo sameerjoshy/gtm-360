@@ -6,7 +6,7 @@ import App from './App.jsx';
 import './index.css';
 
 // Initialize GA4 with your Measurement ID
-const MEASUREMENT_ID = "G-XK9P9Q9R9"; // Placeholder
+const MEASUREMENT_ID = "G-ZYCR2GTVQ8";
 ReactGA.initialize(MEASUREMENT_ID);
 
 const Root = () => {
