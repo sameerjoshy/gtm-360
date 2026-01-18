@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import heroWarRoom from '../assets/hero_war_room.png';
 import operatingBlueprint from '../assets/operating_model_blueprint.png';
 import RevenueCalculator from '../components/tools/RevenueCalculator';
@@ -10,15 +10,11 @@ import VideoEmbed from '../components/media/VideoEmbed';
 const Home = () => {
     return (
         <div className="home-page">
-            <Helmet>
-                <title>GTM360 | The Revenue Operating System</title>
-                <meta name="description" content="When growth stalls, the problem is rarely effort. It's the GTM operating model. GTM360 helps leadership teams fix the decision systems that convert effort into revenue." />
-                <meta property="og:title" content="GTM360 | The Revenue Operating System" />
-                <meta property="og:description" content="We build revenue operating systems for B2B companies. Stop guessing, start engineering." />
-                <meta property="og:image" content="https://gtm-360.com/assets/hero_war_room.png" />
-                <meta property="og:url" content="https://gtm-360.com/" />
-                <meta property="og:type" content="website" />
-            </Helmet>
+            <SEO
+                title="The Revenue Operating System"
+                description="When growth stalls, the problem is rarely effort. It's the GTM operating model. GTM360 helps leadership teams fix the decision systems that convert effort into revenue."
+                canonical="https://gtm-360.com/"
+            />
             {/* BLOCK 1: HERO */}
             <section className="section !pt-0 pb-24 md:pb-32" style={{ paddingTop: '0px' }}>
                 <div className="container max-w-6xl"> {/* Widened container for better image fit */}
@@ -310,7 +306,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </div >
     );
 };
 

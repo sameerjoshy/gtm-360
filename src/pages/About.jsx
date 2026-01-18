@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import founderAbstract from '../assets/founder_abstract.png';
 
 const About = () => {
     return (
         <div className="about-page">
-            <Helmet>
-                <title>Team & Principals | GTM360</title>
-                <meta name="description" content="We are operators, not consultants. Led by former AWS/Amazon executives, we bring architectural rigor to revenue problems." />
-                <meta property="og:title" content="Team & Principals | GTM360" />
-                <meta property="og:description" content="Led by former AWS/Amazon executives, we bring architectural rigor to revenue problems." />
-                <meta property="og:url" content="https://gtm-360.com/about" />
-            </Helmet>
+            <SEO
+                title="Team & Principals"
+                description="We are operators, not consultants. Led by former AWS/Amazon executives, we bring architectural rigor to revenue problems."
+                canonical="https://gtm-360.com/about"
+            />
             {/* BLOCK 1: WHY EXIST */}
             <section className="section py-24 md:py-32">
                 <div className="container max-w-4xl opacity-0 animate-fade-in-up" style={{ animationFillMode: 'forwards' }}>

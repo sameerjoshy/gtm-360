@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { Settings, Filter, TrendingUp, Cpu, ArrowRight } from 'lucide-react';
 
@@ -41,12 +41,13 @@ const Services = () => {
 
     return (
         <div className="services-page">
-            <Helmet>
-                <title>GTM System Repair Services | GTM-360</title>
-                <meta name="description" content="Post-diagnostic system repairs to realign GTM operating models, pipeline quality, forecasting, and signals." />
-                <link rel="canonical" href="https://gtm-360.com/services" />
+            <SEO
+                title="GTM System Repair Services"
+                description="Post-diagnostic system repairs to realign GTM operating models, pipeline quality, forecasting, and signals."
+                canonical="https://gtm-360.com/services"
+            >
                 <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
-            </Helmet>
+            </SEO>
 
             {/* HERO SECTION */}
             <section className="section py-20 md:py-32 bg-white text-center">

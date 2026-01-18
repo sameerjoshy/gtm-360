@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { ArrowLeft, CheckCircle2, AlertTriangle } from 'lucide-react';
 import RevenueCalculator from '../components/tools/RevenueCalculator';
 import LeadMagnet from '../components/marketing/LeadMagnet';
@@ -46,10 +46,10 @@ const ProblemDetail = () => {
 
     return (
         <div className="pt-24 pb-20">
-            <Helmet>
-                <title>{data.title} | GTM-360 Diagnostic</title>
-                <meta name="description" content={`Fixing ${data.title}: ${data.diagnosis}`} />
-            </Helmet>
+            <SEO
+                title={`${data.title} | Diagnostic`}
+                description={`Fixing ${data.title}: ${data.diagnosis}`}
+            />
 
             <div className="container max-w-4xl">
                 <Link to="/problems" className="flex items-center text-gray-500 hover:text-[var(--color-primary)] mb-8 transition-colors">

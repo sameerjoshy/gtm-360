@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/SEO';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { AlertTriangle, CheckCircle, Activity, TrendingUp, Cpu, BarChart2 } from 'lucide-react';
 
@@ -30,10 +30,10 @@ const Platform = () => {
 
     return (
         <div className="platform-page bg-slate-50 min-h-screen pt-24 pb-16">
-            <Helmet>
-                <title>Platform Demo | GTM360 Revenue OS</title>
-                <meta name="description" content="Interactive demo of the GTM360 Revenue Operating System. See the difference between ad-hoc growth and engineered revenue." />
-            </Helmet>
+            <SEO
+                title="Platform Demo"
+                description="Interactive demo of the GTM360 Revenue Operating System. See the difference between ad-hoc growth and engineered revenue."
+            />
 
             <div className="container max-w-7xl mx-auto px-4">
                 {/* Header */}
