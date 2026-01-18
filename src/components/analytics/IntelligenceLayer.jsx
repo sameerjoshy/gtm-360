@@ -8,10 +8,12 @@ import { Helmet } from 'react-helmet-async';
  */
 const IntelligenceLayer = () => {
 
-    // Config: Enable/Disable providers here
+    // Config: Enable/Disable providers via environment variables
     const config = {
-        enableClearbit: false, // Set to true when key is available
-        enable6sense: false
+        enableClearbit: import.meta.env.VITE_ENABLE_CLEARBIT === 'true',
+        enable6sense: import.meta.env.VITE_ENABLE_6SENSE === 'true',
+        clearbitKey: import.meta.env.VITE_CLEARBIT_KEY,
+        sixSenseId: import.meta.env.VITE_6SENSE_ID
     };
 
     useEffect(() => {
@@ -21,7 +23,7 @@ const IntelligenceLayer = () => {
         if (config.enable6sense) {
             console.log("GTM-360 [Intel]: Initializing 6sense...");
         }
-    }, []);
+    }, [config.enableClearbit, config.enable6sense]);
 
     return (
         <Helmet>

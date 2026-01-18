@@ -46,6 +46,44 @@ const RouteTracker = () => {
     return null;
 };
 
+import { AnimatePresence } from 'framer-motion';
+import PageTransition from './components/layout/PageTransition';
+
+// ... existing imports ...
+
+// Animated Routes Component to handle useLocation
+const AnimatedRoutes = () => {
+    const location = useLocation();
+
+    return (
+        <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+                <Route path="/problems" element={<PageTransition><Problems /></PageTransition>} />
+                <Route path="/problems/:slug" element={<PageTransition><ProblemDetail /></PageTransition>} />
+                <Route path="/how-we-work" element={<PageTransition><HowWeWork /></PageTransition>} />
+                <Route path="/insights" element={<PageTransition><Insights /></PageTransition>} />
+                <Route path="/partners" element={<PageTransition><Partners /></PageTransition>} />
+                <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+                <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+                <Route path="/diagnostic" element={<PageTransition><Diagnostic /></PageTransition>} />
+                <Route path="/platform" element={<PageTransition><Platform /></PageTransition>} />
+                <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
+                <Route path="/services/gtm-operating-model" element={<PageTransition><GTMOperatingModel /></PageTransition>} />
+                <Route path="/services/pipeline-quality" element={<PageTransition><PipelineQuality /></PageTransition>} />
+                <Route path="/services/forecasting-governance" element={<PageTransition><ForecastingGovernance /></PageTransition>} />
+                <Route path="/services/gtm-signals-and-ai" element={<PageTransition><GTMSignalsAI /></PageTransition>} />
+                <Route path="/insights/case-studies/:slug" element={<PageTransition><CaseStudyPost /></PageTransition>} />
+                <Route path="/insights/:slug" element={<PageTransition><InsightPost /></PageTransition>} />
+                <Route path="/thank-you" element={<PageTransition><ThankYou /></PageTransition>} />
+                <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
+                <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+                <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
+            </Routes>
+        </AnimatePresence>
+    );
+};
+
 function App() {
     return (
         <Router>
@@ -53,32 +91,9 @@ function App() {
             <IntelligenceLayer />
             <div className="min-h-screen flex flex-col font-sans text-gray-900 bg-white">
                 <Header />
-                <main className="flex-grow pt-36"> {/* Adjust for fixed header height */}
+                <main className="flex-grow pt-36">
                     <Suspense fallback={<PageLoader />}>
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/problems" element={<Problems />} />
-                            <Route path="/problems/:slug" element={<ProblemDetail />} />
-                            <Route path="/how-we-work" element={<HowWeWork />} />
-                            <Route path="/insights" element={<Insights />} />
-                            <Route path="/partners" element={<Partners />} />
-                            <Route path="/about" element={<About />} />
-                            <Route path="/contact" element={<Contact />} />
-                            <Route path="/diagnostic" element={<Diagnostic />} />
-                            <Route path="/platform" element={<Platform />} />
-                            <Route path="/services" element={<Services />} />
-                            <Route path="/services/gtm-operating-model" element={<GTMOperatingModel />} />
-                            <Route path="/services/pipeline-quality" element={<PipelineQuality />} />
-                            <Route path="/services/forecasting-governance" element={<ForecastingGovernance />} />
-                            <Route path="/services/gtm-signals-and-ai" element={<GTMSignalsAI />} />
-                            <Route path="/insights" element={<Insights />} />
-                            <Route path="/insights/case-studies/:slug" element={<CaseStudyPost />} />
-                            <Route path="/insights/:slug" element={<InsightPost />} />
-                            <Route path="/thank-you" element={<ThankYou />} />
-                            <Route path="/privacy" element={<Privacy />} />
-                            <Route path="/terms" element={<Terms />} />
-                            <Route path="*" element={<NotFound />} />
-                        </Routes>
+                        <AnimatedRoutes />
                     </Suspense>
                 </main>
                 <Footer />

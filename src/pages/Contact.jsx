@@ -44,13 +44,11 @@ const Contact = () => {
 
 // HubSpot Form Component
 import { useNavigate } from 'react-router-dom';
+import useSubmitLead from '../hooks/useSubmitLead';
 
 const HubSpotForm = () => {
-    // Configuration from your provided form link
-    const PORTAL_ID = '244225374';
-    const FORM_ID = 'b631cbcc-1f01-47f9-926c-715a4cb2cd8a';
-
     const navigate = useNavigate();
+    const { submit, status } = useSubmitLead();
 
     const [formData, setFormData] = React.useState({
         firstname: '',
@@ -58,60 +56,21 @@ const HubSpotForm = () => {
         company: '',
         message: ''
     });
-    const [status, setStatus] = React.useState('idle'); // idle, submitting, success, error
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    // Helper to get cookie by name
-    const getCookie = (name) => {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setStatus('submitting');
+        const success = await submit('contact', [
+            { name: 'firstname', value: formData.firstname },
+            { name: 'email', value: formData.email },
+            { name: 'company', value: formData.company },
+            { name: 'message', value: formData.message }
+        ]);
 
-        const url = `https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_ID}`;
-
-        // Context Data for HubSpot
-        const context = {
-            pageUri: window.location.href,
-            pageName: 'Contact Page',
-            hutk: getCookie('hubspotutk') // HubSpot Tracking Cookie
-        };
-
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    fields: [
-                        { name: 'firstname', value: formData.firstname },
-                        { name: 'email', value: formData.email },
-                        { name: 'company', value: formData.company },
-                        { name: 'message', value: formData.message }
-                    ],
-                    context: context
-                })
-            });
-
-            if (response.ok) {
-                setStatus('success');
-                // Redirect to Thank You page
-                navigate('/thank-you');
-            } else {
-                throw new Error('Submission failed');
-            }
-        } catch (error) {
-            console.error('HubSpot Error:', error);
-            // Fallback for demo purposes if keys are invalid
-            setStatus('success');
+        if (success) {
             navigate('/thank-you');
         }
     };

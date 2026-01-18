@@ -10,6 +10,8 @@ const RevenueCalculator = () => {
 
     // Email Capture State
     const [email, setEmail] = useState('');
+    const [role, setRole] = useState('');
+    const [arr, setArr] = useState('');
     const { submit, status } = useSubmitLead();
 
     const questions = [
@@ -56,6 +58,8 @@ const RevenueCalculator = () => {
         setScore(0);
         setIsFinished(false);
         setEmail('');
+        setRole('');
+        setArr('');
     };
 
     const getResult = () => {
@@ -78,8 +82,11 @@ const RevenueCalculator = () => {
         if (!email) return;
         submit('diagnostic_score', [
             { name: 'email', value: email },
+            { name: 'jobtitle', value: role }, // HubSpot Standard Field
+            { name: 'annualrevenue', value: arr }, // HubSpot Standard Field
             { name: 'message', value: `Diagnostic Score: ${score}/30 (${getResult().tier})` }
         ]);
+        // The hook handles status updates, which triggers the success UI
     };
 
     return (
@@ -147,22 +154,44 @@ const RevenueCalculator = () => {
                                 Report sent! Check your inbox.
                             </div>
                         ) : (
-                            <form onSubmit={handleEmailSubmit} className="max-w-sm mx-auto mb-8">
+                            <form onSubmit={handleEmailSubmit} className="max-w-md mx-auto mb-8 space-y-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <input
+                                        type="text"
+                                        placeholder="Job Title (e.g. CRO)"
+                                        value={role}
+                                        onChange={(e) => setRole(e.target.value)}
+                                        className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-sm focus:outline-none focus:border-[var(--color-primary)] text-sm"
+                                        required
+                                    />
+                                    <select
+                                        value={arr}
+                                        onChange={(e) => setArr(e.target.value)}
+                                        className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-sm focus:outline-none focus:border-[var(--color-primary)] text-sm appearance-none"
+                                        required
+                                    >
+                                        <option value="" disabled>ARR Range</option>
+                                        <option value="$0-1M">$0 - $1M</option>
+                                        <option value="$1M-10M">$1M - $10M</option>
+                                        <option value="$10M-50M">$10M - $50M</option>
+                                        <option value="$50M+">$50M+</option>
+                                    </select>
+                                </div>
                                 <div className="flex gap-2">
                                     <input
                                         type="email"
-                                        placeholder="Email me my report..."
+                                        placeholder="Work Email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        className="flex-1 px-4 py-2 bg-slate-800 border border-slate-700 rounded-sm focus:outline-none focus:border-[var(--color-primary)] text-sm"
+                                        className="flex-1 px-4 py-3 bg-slate-800 border border-slate-700 rounded-sm focus:outline-none focus:border-[var(--color-primary)] text-sm"
                                         required
                                     />
                                     <button
                                         type="submit"
                                         disabled={status === 'submitting'}
-                                        className="btn bg-[var(--color-primary)] text-white hover:bg-opacity-90 px-4 py-2 text-sm whitespace-nowrap"
+                                        className="btn bg-[var(--color-primary)] text-white hover:bg-opacity-90 px-6 py-3 text-sm whitespace-nowrap"
                                     >
-                                        {status === 'submitting' ? 'Sending...' : 'Send'}
+                                        {status === 'submitting' ? 'Sending...' : 'Get Full Report'}
                                     </button>
                                 </div>
                             </form>

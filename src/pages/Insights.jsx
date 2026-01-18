@@ -121,26 +121,32 @@ const Insights = () => {
                             <Link
                                 key={study.slug}
                                 to={study.slug}
-                                className="group bg-slate-900 p-10 rounded-sm shadow-xl hover:shadow-2xl hover:translate-y-[-4px] transition-all duration-300 flex flex-col relative overflow-hidden"
+                                className="group bg-slate-900 p-10 rounded-sm shadow-xl hover:shadow-2xl hover:translate-y-[-4px] transition-all duration-300 flex flex-col relative overflow-hidden h-full"
                             >
                                 {/* Decorative accent */}
                                 <div className="absolute top-0 left-0 w-2 h-full bg-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                                 <div className="text-xs font-bold uppercase text-[var(--color-primary)] mb-6 tracking-widest flex items-center gap-2">
                                     <FileText className="w-4 h-4" />
-                                    <span>{study.category}</span>
+                                    <span>{study.client_profile}</span>
                                 </div>
 
                                 <h3 className="text-2xl font-bold text-white mb-4 leading-tight group-hover:text-[var(--color-primary)] transition-colors">
                                     {study.title}
                                 </h3>
 
-                                <p className="text-slate-300 mb-8 text-lg font-serif italic border-l-2 border-slate-700 pl-4">
-                                    "{study.thesis}"
+                                <p className="text-slate-300 mb-8 text-lg font-serif italic border-l-2 border-slate-700 pl-4 flex-grow">
+                                    "{study.subtitle}"
                                 </p>
 
-                                <div className="mt-auto flex items-center text-white font-medium group-hover:translate-x-2 transition-transform">
-                                    Read Case Study <ArrowRight className="ml-2 w-5 h-5" />
+                                <div className="mt-6 pt-6 border-t border-slate-800 flex justify-between items-center text-sm font-medium">
+                                    <div className="text-green-400">
+                                        <span className="block text-xs uppercase text-slate-500">Impact</span>
+                                        {study.metrics.after.growth} Growth
+                                    </div>
+                                    <div className="text-white group-hover:translate-x-2 transition-transform flex items-center">
+                                        Read Case Study <ArrowRight className="ml-2 w-4 h-4" />
+                                    </div>
                                 </div>
                             </Link>
                         ))}
