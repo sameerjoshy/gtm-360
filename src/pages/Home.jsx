@@ -7,6 +7,8 @@ import RevenueCalculator from '../components/tools/RevenueCalculator';
 import TestimonialMarquee from '../components/social/TestimonialMarquee';
 import VideoEmbed from '../components/media/VideoEmbed';
 
+import TechStackMarquee from '../components/social/TechStackMarquee';
+
 const Home = () => {
     return (
         <div className="home-page">
@@ -56,6 +58,9 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* BLOCK 1.5: TECH STACK MARQUEE */}
+            <TechStackMarquee />
 
             {/* BLOCK 2: MISDIAGNOSIS */}
             <section className="section bg-[var(--color-secondary)]">
@@ -230,27 +235,26 @@ const Home = () => {
                                 reality: "Weak customer cohorting and generic value",
                                 outcome: "Fewer campaigns, higher signal quality"
                             },
-                            },
-                        {
-                            symptom: "Forecast volatility in scaled org",
-                        reality: "Inspection was backward-looking",
-                        outcome: "Earlier risk surfacing, improved predictability"
+                            {
+                                symptom: "Forecast volatility in scaled org",
+                                reality: "Inspection was backward-looking",
+                                outcome: "Earlier risk surfacing, improved predictability"
                             }
                         ].map((card, i) => (
-                        <div key={i} className="glass-card p-8 rounded-sm flex flex-col h-full border-t-4 border-transparent hover:border-[var(--color-primary)] transition-all">
-                            <div className="mb-4">
-                                <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">Symptom</span>
-                                <p className="font-medium text-gray-900 mt-1">{card.symptom}</p>
+                            <div key={i} className="glass-card p-8 rounded-sm flex flex-col h-full border-t-4 border-transparent hover:border-[var(--color-primary)] transition-all">
+                                <div className="mb-4">
+                                    <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">Symptom</span>
+                                    <p className="font-medium text-gray-900 mt-1">{card.symptom}</p>
+                                </div>
+                                <div className="mb-4">
+                                    <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">Reality</span>
+                                    <p className="font-medium text-[var(--color-primary)] mt-1">{card.reality}</p>
+                                </div>
+                                <div className="mt-auto pt-4 border-t border-gray-100">
+                                    <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">Outcome</span>
+                                    <p className="text-sm text-gray-600 mt-1">{card.outcome}</p>
+                                </div>
                             </div>
-                            <div className="mb-4">
-                                <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">Reality</span>
-                                <p className="font-medium text-[var(--color-primary)] mt-1">{card.reality}</p>
-                            </div>
-                            <div className="mt-auto pt-4 border-t border-gray-100">
-                                <span className="text-xs font-bold text-gray-400 uppercase tracking-wide">Outcome</span>
-                                <p className="text-sm text-gray-600 mt-1">{card.outcome}</p>
-                            </div>
-                        </div>
                         ))}
                     </div>
                     <div className="mt-8 md:hidden">
