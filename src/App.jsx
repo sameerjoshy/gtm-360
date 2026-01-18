@@ -29,6 +29,8 @@ const CaseStudyPost = lazy(() => import('./pages/insights/CaseStudyPost'));
 const ThankYou = lazy(() => import('./pages/ThankYou'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const Terms = lazy(() => import('./pages/Terms'));
+const Glossary = lazy(() => import('./pages/Glossary'));
+const GlossaryDetail = lazy(() => import('./pages/GlossaryDetail'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading component
@@ -83,6 +85,8 @@ const AnimatedRoutes = () => {
                 <Route path="/thank-you" element={<PageTransition><ThankYou /></PageTransition>} />
                 <Route path="/privacy" element={<PageTransition><Privacy /></PageTransition>} />
                 <Route path="/terms" element={<PageTransition><Terms /></PageTransition>} />
+                <Route path="/glossary" element={<PageTransition><Glossary /></PageTransition>} />
+                <Route path="/glossary/:slug" element={<PageTransition><GlossaryDetail /></PageTransition>} />
                 <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
             </Routes>
         </AnimatePresence>

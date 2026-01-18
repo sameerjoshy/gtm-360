@@ -16,6 +16,7 @@ const Footer = () => {
                     <Link to="/problems" className="hover:text-[var(--color-primary)]">Problems We Solve</Link>
                     <Link to="/how-we-work" className="hover:text-[var(--color-primary)]">How We Work</Link>
                     <Link to="/insights" className="hover:text-[var(--color-primary)]">Insights</Link>
+                    <Link to="/glossary" className="hover:text-[var(--color-primary)]">Glossary</Link>
                     <Link to="/partners" className="hover:text-[var(--color-primary)]">Partners</Link>
                     <Link to="/about" className="hover:text-[var(--color-primary)]">About</Link>
                     <Link to="/contact" className="hover:text-[var(--color-primary)]">Contact</Link>
