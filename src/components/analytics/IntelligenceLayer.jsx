@@ -12,18 +12,17 @@ const IntelligenceLayer = () => {
     const config = {
         enableClearbit: import.meta.env.VITE_ENABLE_CLEARBIT === 'true',
         enable6sense: import.meta.env.VITE_ENABLE_6SENSE === 'true',
+        enableRB2B: import.meta.env.VITE_ENABLE_RB2B === 'true',
         clearbitKey: import.meta.env.VITE_CLEARBIT_KEY,
-        sixSenseId: import.meta.env.VITE_6SENSE_ID
+        sixSenseId: import.meta.env.VITE_6SENSE_ID,
+        rb2bId: import.meta.env.VITE_RB2B_ID
     };
 
     useEffect(() => {
-        if (config.enableClearbit) {
-            console.log("GTM-360 [Intel]: Initializing Clearbit Reveal...");
-        }
-        if (config.enable6sense) {
-            console.log("GTM-360 [Intel]: Initializing 6sense...");
-        }
-    }, [config.enableClearbit, config.enable6sense]);
+        if (config.enableClearbit) console.log("GTM-360 [Intel]: Initializing Clearbit Reveal...");
+        if (config.enable6sense) console.log("GTM-360 [Intel]: Initializing 6sense...");
+        if (config.enableRB2B) console.log("GTM-360 [Intel]: Initializing RB2B...");
+    }, [config.enableClearbit, config.enable6sense, config.enableRB2B]);
 
     return (
         <Helmet>
@@ -45,6 +44,7 @@ const IntelligenceLayer = () => {
                  `}
                 </script>
             )}
+
         </Helmet>
     );
 };
