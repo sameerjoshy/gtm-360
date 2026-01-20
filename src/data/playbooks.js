@@ -1,5 +1,98 @@
 
+
 export const playbooks = [
+    {
+        id: "marketing-gtm-audit",
+        slug: "gtm-audit-diagnostic",
+        category: "Marketing",
+        title: "The GTM Audit & Diagnostic",
+        subtitle: "How to audit your own Go-To-Market engine in 4 hours. Stop guessing, start engineering.",
+        readTime: "10 min read",
+        difficulty: "Strategic",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Core Concept</h3>
+                <p><strong>You can't fix what you can't see.</strong></p>
+                <p>Most leadership teams debate tactics ("Should we do TikTok?") before they agree on the problem ("Our CAC is too high because our message is generic").</p>
+                <p>A GTM Audit is not a 3-month McKinsey project. It is a 4-hour "Dissection" of your Revenue Engine to find the <strong>Constraint</strong>.</p>
+                
+                <h3>The 4 Layers of the Audit</h3>
+                <p>You must audit your engine in this specific order. Most people start with Talent (Level 4). You must start with Data (Level 1).</p>
+                <div class="space-y-4 my-6">
+                    <div class="p-4 bg-slate-100 rounded-lg">
+                        <h4 class="font-bold text-slate-900 mt-0">Level 1: Data Model (The Truth)</h4>
+                        <p class="text-sm">Do Sales and Marketing agree on what a "Lead" is? If not, stop. You have no engine.</p>
+                    </div>
+                    <div class="p-4 bg-slate-100 rounded-lg">
+                        <h4 class="font-bold text-slate-900 mt-0">Level 2: Operating Model (The Logic)</h4>
+                        <p class="text-sm">Do you have clear entry/exit criteria for every pipeline stage? Or is it based on "Rep Sentiment"?</p>
+                    </div>
+                    <div class="p-4 bg-slate-100 rounded-lg">
+                        <h4 class="font-bold text-slate-900 mt-0">Level 3: Process Map (The Flow)</h4>
+                        <p class="text-sm">Is the handoff from SDR to AE documented? Is the handoff from AE to CS automated?</p>
+                    </div>
+                    <div class="p-4 bg-slate-100 rounded-lg">
+                        <h4 class="font-bold text-slate-900 mt-0">Level 4: Talent & Tools (The Fuel)</h4>
+                        <p class="text-sm">Only now do you ask: "Do we have the right people/tools to run this process?"</p>
+                    </div>
+                </div>
+
+                <h3>The Output</h3>
+                <p>The goal of the audit is to find the <strong>One Constraint</strong>. There is always only one primary constraint holding back growth (Theory of Constraints). Fix that, and everything else gets easier.</p>
+            `,
+            scriptShort: `
+                <strong>[HOOK - 0:00-0:05]</strong><br/>
+                Stop hiring more sales reps until you fix your leaky bucket.<br/>
+                You are pouring water into a strainer.<br/><br/>
+
+                <strong>[THE INSIGHT - 0:05-0:30]</strong><br/>
+                Most leaders think "Growth" means "More Activity".<br/>
+                More calls. More ads. More emails.<br/>
+                But if your GTM Operating Model is broken, "More Activity" just accelerates your cash burn.<br/>
+                You don't need a new CMO. You need an Audit.<br/><br/>
+
+                <strong>[THE SHIFT - 0:30-0:50]</strong><br/>
+                Audit your business in this order:<br/>
+                1. Data (Do we agree on the math?)<br/>
+                2. Stages (Do we agree on the milestones?)<br/>
+                3. Handoffs (Where does the ball drop?)<br/>
+                Only then do you look at People.<br/>
+                Fix the system, and average people become rockstars.<br/><br/>
+
+                <strong>[CTA - 0:50-1:00]</strong><br/>
+                Don't guess.<br/>
+                Dissect the engine.<br/>
+            `,
+            scriptDeepDive: `
+                <strong>Topic:</strong> Running the 4-Hour GTM Diagnostic<br/>
+                <strong>Format:</strong> Workshop Template<br/>
+                <strong>Duration:</strong> 15 Minutes<br/><br/>
+
+                <strong>Section 1: The "War Room" Setup</strong><br/>
+                - Who needs to be in the room? (CEO, CRO, CMO, CS Leader).<br/>
+                - The "No Laptop" rule.<br/><br/>
+
+                <strong>Section 2: The "Whiteboard Dissection"</strong><br/>
+                - How to draw the "Golden Thread" from First Touch to Renewal.<br/>
+                - Identifying the "Red Flag" drop-off points.<br/><br/>
+
+                <strong>Section 3: Defining the Constraint</strong><br/>
+                - Leaving the room with ONE priority for the quarter.<br/>
+            `,
+            bestPracticeSnippets: [
+                "Audit in order: Data -> Logic -> Process -> People. Never start with People.",
+                "If Sales and Marketing can't agree on the definition of a 'Qualified Lead', you don't have a GTM problem; you have a cultural problem.",
+                "The goal of an audit is not to list 50 broken things. It is to find the ONE thing that makes the other 49 irrelevant.",
+                "A bad process kills good talent. A good process protects the business from bad talent."
+            ]
+        },
+        relatedService: {
+            title: "GTM Operating Model Realignment",
+            link: "/services/gtm-operating-model"
+        }
+    },
     {
         id: "marketing-95-5-rule",
         slug: "the-95-5-rule",
