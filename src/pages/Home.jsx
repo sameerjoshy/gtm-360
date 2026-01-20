@@ -52,7 +52,7 @@ const Home = () => {
                                 className="relative rounded-lg shadow-2xl border border-gray-100 transform group-hover:scale-[1.01] transition duration-500"
                             />
                             <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded text-xs font-mono text-indigo-600 border border-indigo-100">
-                                /// OPERATOR_VIEW_ACTIVE
+                                {'/// OPERATOR_VIEW_ACTIVE'}
                             </div>
                         </div>
                     </div>

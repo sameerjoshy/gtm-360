@@ -37,7 +37,7 @@ const TechStackMarquee = () => {
                     </div>
                 </div>
             </div>
-            <style jsx>{`
+            <style>{`
                 .mask-linear-fade {
                     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
                 }

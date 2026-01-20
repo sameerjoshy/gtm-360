@@ -1,0 +1,13 @@
+﻿
+> gtm360@0.0.0 lint
+> eslint .
+
+
+C:\Users\DELL\.gemini\antigravity\scratch\GTM_360\src\main.jsx
+  12:7  warning  Fast refresh only works when a file has exports. Move your component(s) to a separate file  react-refresh/only-export-components
+
+C:\Users\DELL\.gemini\antigravity\scratch\GTM_360\src\pages\PlaybookDetail.jsx
+  125:50  error  'CheckCircle' is not defined  react/jsx-no-undef
+
+Ô£û 2 problems (1 error, 1 warning)
+

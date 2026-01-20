@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import GrowthBlueprintDesign from '../components/visuals/GrowthBlueprintDesign';
 
 const ThankYou = () => {
     const location = useLocation();

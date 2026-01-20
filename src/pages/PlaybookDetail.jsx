@@ -2,34 +2,10 @@ import React, { useState } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { playbooks } from '../data/playbooks';
-import { BookOpen, Video, ArrowLeft, CheckCircle, Copy, Share2 } from 'lucide-react';
+import { BookOpen, Video, ArrowLeft, Share2, CheckCircle } from 'lucide-react';
 import DOMPurify from 'dompurify';
 
-const SnippetCard = ({ snippet }) => {
-    const [copied, setCopied] = useState(false);
-
-    const handleCopy = () => {
-        navigator.clipboard.writeText(snippet);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-    };
-
-    return (
-        <div className="group bg-white border border-gray-100 hover:border-[var(--color-primary)] p-6 rounded-xl shadow-sm hover:shadow-md transition-all relative">
-            <p className="text-gray-700 text-sm leading-relaxed pr-8">
-                "{snippet}"
-            </p>
-            <button
-                onClick={handleCopy}
-                className={`absolute top-4 right-4 p-2 rounded-lg transition-colors ${copied ? 'text-green-500 bg-green-50' : 'text-gray-400 hover:text-[var(--color-primary)] hover:bg-gray-50'
-                    }`}
-                title="Copy snippet"
-            >
-                {copied ? <CheckCircle className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-            </button>
-        </div>
-    );
-};
+import SnippetCard from '../components/content/SnippetCard';
 
 const PlaybookDetail = () => {
     const { slug } = useParams();
