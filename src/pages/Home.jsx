@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AlertTriangle, TrendingDown, HelpCircle, Activity, Users, Cpu, User, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 import heroWarRoom from '../assets/hero_war_room.png';
 import operatingBlueprint from '../assets/operating_model_blueprint.png';
@@ -107,12 +108,11 @@ const Home = () => {
                             </p>
 
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-slate-200 rounded-full overflow-hidden">
-                                    {/* Placeholder Avatar - Replace with actual headshot */}
-                                    <div className="w-full h-full bg-slate-300 flex items-center justify-center text-slate-500 font-bold">S</div>
+                                <div className="w-14 h-14 bg-gradient-to-br from-slate-200 to-slate-300 rounded-full flex items-center justify-center border-2 border-white shadow-md text-slate-500">
+                                    <User className="w-7 h-7" />
                                 </div>
                                 <div>
-                                    <p className="font-semibold text-gray-900">Sameer</p>
+                                    <p className="font-semibold text-gray-900 text-lg">Sameer</p>
                                     <p className="text-sm text-gray-500">Founder, GTM-360</p>
                                 </div>
                             </div>
@@ -134,17 +134,18 @@ const Home = () => {
             <section className="section">
                 <div className="container">
                     <h2 className="text-3xl font-semibold mb-12">What this looks like inside real companies</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
-                            "Busy everywhere, breakthrough nowhere",
-                            "Pipeline exists, conversion weakens",
-                            "Deals stall late “without a clear reason”",
-                            "Forecasts explain the past, not guide action",
-                            "Leaders disagree on what’s actually wrong",
-                            "AI and tools add noise, not leverage"
+                            { text: "Busy everywhere, breakthrough nowhere", icon: <Activity className="w-6 h-6 text-orange-500" />, color: "bg-orange-50 border-orange-200" },
+                            { text: "Pipeline exists, conversion weakens", icon: <TrendingDown className="w-6 h-6 text-red-500" />, color: "bg-red-50 border-red-200" },
+                            { text: "Deals stall late “without a clear reason”", icon: <HelpCircle className="w-6 h-6 text-purple-500" />, color: "bg-purple-50 border-purple-200" },
+                            { text: "Forecasts explain the past, not guide action", icon: <AlertTriangle className="w-6 h-6 text-yellow-500" />, color: "bg-yellow-50 border-yellow-200" },
+                            { text: "Leaders disagree on what’s actually wrong", icon: <Users className="w-6 h-6 text-blue-500" />, color: "bg-blue-50 border-blue-200" },
+                            { text: "AI and tools add noise, not leverage", icon: <Cpu className="w-6 h-6 text-indigo-500" />, color: "bg-indigo-50 border-indigo-200" }
                         ].map((item, i) => (
-                            <div key={i} className="border-t-2 border-[var(--color-secondary)] pt-4">
-                                <p className="text-lg text-gray-800">{item}</p>
+                            <div key={i} className={`p-6 rounded-lg border ${item.color} transition-all hover:-translate-y-1 hover:shadow-md`}>
+                                <div className="mb-4">{item.icon}</div>
+                                <p className="text-lg font-medium text-gray-800">{item.text}</p>
                             </div>
                         ))}
                     </div>

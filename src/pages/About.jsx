@@ -42,8 +42,8 @@ const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                         <div>
                             {/* Founder Image */}
-                            <div className="relative">
-                                <div className="absolute -inset-4 bg-gray-100 rounded-sm -z-10 transform rotate-2"></div>
+                            <div className="relative group">
+                                <div className="absolute -inset-4 bg-gray-100 rounded-sm -z-10 transform rotate-2 group-hover:rotate-1 transition-transform duration-500"></div>
                                 <img
                                     src={founderAbstract}
                                     alt="Revenue Architecture - Founder Perspective"
@@ -52,21 +52,28 @@ const About = () => {
                             </div>
                         </div>
                         <div>
-                            <h2 className="text-sm font-bold uppercase text-gray-400 mb-2 tracking-widest">Founder</h2>
+                            <h2 className="text-sm font-bold uppercase text-gray-400 mb-2 tracking-widest">Founder & Principal</h2>
                             <h3 className="text-3xl font-semibold text-[var(--color-primary)] mb-6">Built by operators with 25+ years of scar tissue.</h3>
-                            <p className="text-lg text-gray-700 mb-6">
-                                Our founder brings deep operational experience from scaling revenue engines at <strong>Pepsi</strong>, <strong>Deloitte</strong>, and <strong>Amazon/AWS</strong>.
-                            </p>
-                            <p className="text-lg text-gray-700 mb-6">
-                                Having sat in the seat, we know that "best practices" often fail in the real world. That’s why we focus on engineering the system, not just training the people.
-                            </p>
+
+                            <div className="prose prose-lg text-gray-700 mb-8">
+                                <p>
+                                    <strong>Sameer</strong> formed GTM-360 after two decades scaling revenue engines at <strong>Pepsi</strong>, <strong>Deloitte</strong>, and <strong>Amazon/AWS</strong>.
+                                </p>
+                                <p>
+                                    He realized that while tools became more abundant, growth became harder. The problem wasn't a lack of data—it was a breakdown in the <em>operating system</em> that governs how revenue decisions are made.
+                                </p>
+                                <p>
+                                    Sameer built GTM-360 to give leadership teams what he wished he had: a rigorous, engineering-led approach to revenue architecture that replaces "heroics" with reliable systems.
+                                </p>
+                            </div>
 
                             {/* UPDATED LOGOS SECTION */}
-                            <div className="mt-8 flex justify-start items-center">
+                            <div className="mt-8 pt-8 border-t border-gray-100">
+                                <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Previous Experience</p>
                                 <img
                                     src={brandLogos}
                                     alt="Experienced at Amazon, AWS, Deloitte, Pepsi"
-                                    className="max-w-full h-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                                    className="max-w-xs h-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
                                 />
                             </div>
                         </div>
