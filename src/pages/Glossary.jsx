@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { engineStages, glossaryTerms } from '../data/glossary';
 import SEO from '../components/SEO';
 import IconRenderer from '../components/visuals/IconRenderer';
+import { Search, ArrowRight, Tag } from 'lucide-react';
 
 const Glossary = () => {
     const [activeStage, setActiveStage] = useState('all');
@@ -12,7 +13,8 @@ const Glossary = () => {
     const filteredTerms = glossaryTerms.filter(term => {
         const matchesStage = activeStage === 'all' || term.stage === activeStage;
         const matchesSearch = term.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            term.shortDefinition.toLowerCase().includes(searchQuery.toLowerCase());
+            term.shortDefinition.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            term.slug.toLowerCase().includes(searchQuery.toLowerCase());
         return matchesStage && matchesSearch;
     });
 
@@ -35,63 +37,65 @@ const Glossary = () => {
     };
 
     return (
-        <div className="bg-white min-h-screen">
+        <div className="bg-slate-50 min-h-screen">
             <SEO
-                title="Revenue Intelligence Map | GTM-360 Glossary"
-                description="The definitive glossary for RevOps and GTM engineering. Learn the language of the Revenue Operating System."
+                title="GTM Dictionary | The Language of Revenue Engineering"
+                description="Decode the slang and science of modern GTM. From 'Shadow Funnels' to 'Zombie Pipelines', learn the terminology of high-growth revenue engines."
             />
 
             {/* Hero Section */}
-            <section className="pt-20 pb-12 bg-gray-50 border-b border-gray-100">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <section className="pt-24 pb-16 bg-white border-b border-gray-100 relative overflow-hidden">
+                {/* Abstract Bg */}
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+                <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <span className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-[var(--color-primary)] uppercase bg-blue-50 rounded-full border border-blue-100">
-                            The Revenue Operating System
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider text-[var(--color-primary)] uppercase bg-indigo-50 rounded-full border border-indigo-100">
+                            <Tag className="w-3 h-3" /> GTM Dictionary
                         </span>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
-                            Revenue Intelligence <span className="text-gradient">Map</span>
+                        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 mb-6 tracking-tight">
+                            The New Language of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-purple-600">Growth</span>
                         </h1>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-                            Stop using a dictionary. Start using a blueprint. Our interactive map decodes the complexity of modern GTM engineering.
+                            Modern revenue engines aren't built on "MQLs" and "Dials". They are built on <span className="font-semibold text-gray-900">Signals</span>, <span className="font-semibold text-gray-900">Leverage</span>, and <span className="font-semibold text-gray-900">Physics</span>.
                         </p>
                     </motion.div>
 
                     {/* Search & Filter Controls */}
-                    <div className="max-w-4xl mx-auto">
-                        <div className="relative mb-8">
+                    <div className="max-w-3xl mx-auto">
+                        <div className="relative mb-8 group">
                             <input
                                 type="text"
-                                placeholder="Search term, metric, or strategy..."
+                                placeholder="Search the dictionary (e.g. 'Zombie Pipeline')..."
                                 value={searchQuery}
                                 onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full pl-12 pr-4 py-4 bg-white border border-gray-200 rounded-2xl shadow-sm focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all outline-none text-lg"
+                                className="w-full pl-14 pr-4 py-5 bg-white border border-gray-200 rounded-full shadow-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all outline-none text-lg group-hover:shadow-xl"
                             />
-                            <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
+                            <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-6 h-6 text-gray-400 group-hover:text-[var(--color-primary)] transition-colors" />
                         </div>
 
-                        <div className="flex flex-wrap justify-center gap-3">
+                        <div className="flex flex-wrap justify-center gap-2">
                             <button
                                 onClick={() => setActiveStage('all')}
-                                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all border ${activeStage === 'all'
-                                    ? 'bg-gray-900 text-white border-gray-900 shadow-lg'
-                                    : 'bg-white text-gray-600 border-gray-200 hover:border-gray-900 hover:text-gray-900'
+                                className={`px-5 py-2 rounded-full text-sm font-bold transition-all border ${activeStage === 'all'
+                                    ? 'bg-gray-900 text-white border-gray-900 shadow-lg scale-105'
+                                    : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400 hover:text-gray-900'
                                     }`}
                             >
-                                All Components
+                                All Terms
                             </button>
                             {engineStages.map((stage) => (
                                 <button
                                     key={stage.id}
                                     onClick={() => setActiveStage(stage.id)}
-                                    className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all border ${activeStage === stage.id
-                                        ? `bg-white text-gray-900 border-${stage.color}-500 ring-2 ring-${stage.color}-100 shadow-md`
-                                        : 'bg-white text-gray-600 border-gray-200 hover:border-gray-400'
+                                    className={`px-5 py-2 rounded-full text-sm font-bold transition-all border ${activeStage === stage.id
+                                        ? `bg-white text-gray-900 border-${stage.color}-500 ring-2 ring-${stage.color}-100 shadow-md scale-105`
+                                        : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400 hover:text-gray-900'
                                         }`}
                                 >
                                     {stage.title}
@@ -103,80 +107,70 @@ const Glossary = () => {
             </section>
 
             {/* Map Grid */}
-            <section className="py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                    >
-                        <AnimatePresence>
-                            {filteredTerms.map((term) => (
-                                <Link
-                                    to={`/glossary/${term.slug}`}
-                                    key={term.id}
-                                >
-                                    <motion.div
-                                        variants={itemVariants}
-                                        layout
-                                        className="group relative h-full bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
-                                    >
-                                        {/* Background Accent */}
-                                        <div className={`absolute top-0 right-0 w-32 h-32 -mr-16 -mt-16 bg-${getStageColor(term.stage)}-50 rounded-full transition-transform group-hover:scale-150 duration-500 opacity-50`}></div>
+            <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
+                    <AnimatePresence>
+                        {filteredTerms.map((term) => (
+                            <motion.div
+                                key={term.id}
+                                variants={itemVariants}
+                                layout
+                                className="group relative h-full bg-white/70 backdrop-blur-sm p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                            >
+                                {/* Hover Gradient Border Effect */}
+                                <div className={`absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-${getStageColor(term.stage)}-100 pointer-events-none transition-all`}></div>
 
-                                        <div className="relative z-10">
-                                            <div className="flex items-center justify-between mb-6">
-                                                <span className={`px-3 py-1 rounded-md text-[10px] font-black uppercase tracking-widest bg-${getStageColor(term.stage)}-100 text-${getStageColor(term.stage)}-700 border border-${getStageColor(term.stage)}-200`}>
-                                                    {term.type}
-                                                </span>
-                                                <div className={`w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-gray-400 group-hover:text-[var(--color-primary)] transition-colors`}>
-                                                    <IconRenderer icon={term.visualIcon} />
-                                                </div>
-                                            </div>
-
-                                            <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-[var(--color-primary)] transition-colors">
-                                                {term.title}
-                                            </h3>
-                                            <p className="text-gray-600 leading-relaxed mb-8 line-clamp-3">
-                                                {term.shortDefinition}
-                                            </p>
-
-                                            <div className="flex items-center text-sm font-bold text-[var(--color-secondary)] group-hover:underline">
-                                                Analyze Component
-                                                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                                </svg>
-                                            </div>
+                                <div className="relative z-10 flex flex-col h-full">
+                                    <div className="flex items-start justify-between mb-6">
+                                        <div className={`p-3 rounded-xl bg-${getStageColor(term.stage)}-50 text-${getStageColor(term.stage)}-600 group-hover:scale-110 transition-transform duration-300`}>
+                                            <IconRenderer icon={term.visualIcon} className="w-6 h-6" />
                                         </div>
-                                    </motion.div>
-                                </Link>
-                            ))}
-                        </AnimatePresence>
-                    </motion.div>
+                                        <span className={`px-2 py-1 rounded text-[10px] font-bold uppercase tracking-widest bg-gray-100 text-gray-500 border border-gray-200`}>
+                                            {term.type}
+                                        </span>
+                                    </div>
 
-                    {filteredTerms.length === 0 && (
-                        <div className="text-center py-20 bg-gray-50 rounded-3xl border-2 border-dashed border-gray-200">
-                            <p className="text-xl text-gray-500 font-medium">No components found matching your search.</p>
-                        </div>
-                    )}
-                </div>
-            </section>
+                                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+                                        {term.title}
+                                    </h3>
 
-            {/* CTA Section */}
-            <section className="pb-24">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-gray-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-                        <h2 className="text-3xl font-bold mb-6">Need the full playbook?</h2>
-                        <p className="text-gray-400 mb-10 text-lg">
-                            Go beyond definitions and learn how to engineer these concepts into your growth engine.
-                        </p>
-                        <Link to="/playbooks" className="inline-block bg-white text-gray-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-xl">
-                            Browse All Playbooks
-                        </Link>
+                                    <p className="text-gray-500 text-sm mb-4 italic border-l-2 border-gray-200 pl-3">
+                                        "{term.shortDefinition}"
+                                    </p>
+
+                                    <p className="text-gray-700 leading-relaxed mb-6 text-sm flex-grow">
+                                        {term.fullDefinition}
+                                    </p>
+
+                                    <div className="pt-4 border-t border-gray-100 mt-auto flex items-center justify-between">
+                                        <span className={`text-xs font-bold uppercase tracking-wider text-${getStageColor(term.stage)}-600 flex items-center gap-1`}>
+                                            <div className={`w-2 h-2 rounded-full bg-${getStageColor(term.stage)}-500`}></div>
+                                            {engineStages.find(s => s.id === term.stage)?.title.split(' ')[0]}
+                                        </span>
+                                        {/* Link placeholder for future */}
+                                        {/* <Link to={`/playbooks?topic=${term.slug}`} className="text-xs font-bold text-gray-400 hover:text-[var(--color-primary)] flex items-center gap-1 transition-colors">
+                                            Related Playbook <ArrowRight className="w-3 h-3" />
+                                        </Link> */}
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                </motion.div>
+
+                {filteredTerms.length === 0 && (
+                    <div className="text-center py-20 bg-white/50 rounded-3xl border border-dashed border-gray-300">
+                        <p className="text-lg text-gray-500">No signals found matching "{searchQuery}".</p>
+                        <button onClick={() => setSearchQuery('')} className="mt-4 text-[var(--color-primary)] font-bold hover:underline">
+                            Clear filters
+                        </button>
                     </div>
-                </div>
+                )}
             </section>
         </div>
     );
