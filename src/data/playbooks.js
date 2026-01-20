@@ -85,7 +85,13 @@ export const playbooks = [
                 "Audit in order: Data -> Logic -> Process -> People. Never start with People.",
                 "If Sales and Marketing can't agree on the definition of a 'Qualified Lead', you don't have a GTM problem; you have a cultural problem.",
                 "The goal of an audit is not to list 50 broken things. It is to find the ONE thing that makes the other 49 irrelevant.",
-                "A bad process kills good talent. A good process protects the business from bad talent."
+                "A bad process kills good talent. A good process protects the business from bad talent.",
+                "Your CRM is a crime scene. Stop trusting it until you have audited the entry criteria.",
+                "The 'Shadow Funnel' is 10x larger than your visible pipeline. If you can't measure it, at least respect it.",
+                "Zombie Pipeline is not an asset; it is a liability. It gives you false confidence and destroys forecast accuracy.",
+                "Speed > Perfection. A directional audit today is worth more than a perfect audit in 3 months.",
+                "The 'No Decision' outcome is your biggest competitor. Audit why you are losing to status quo, not why you are losing to competitors.",
+                "Revenue Engineering is not about motivation. It is about physics. Remove the friction, and the velocity will increase."
             ]
         },
         videos: [
