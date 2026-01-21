@@ -16,6 +16,7 @@ const Partners = lazy(() => import('./pages/Partners'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Diagnostic = lazy(() => import('./pages/Diagnostic'));
+const Tools = lazy(() => import('./pages/Tools'));
 const Platform = lazy(() => import('./pages/Platform'));
 const Services = lazy(() => import('./pages/Services'));
 const GTMOperatingModel = lazy(() => import('./pages/services/GTMOperatingModel'));
@@ -72,6 +73,7 @@ const AnimatedRoutes = () => {
                 <Route path="/about" element={<PageTransition><About /></PageTransition>} />
                 <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
                 <Route path="/diagnostic" element={<PageTransition><Diagnostic /></PageTransition>} />
+                <Route path="/tools" element={<PageTransition><Tools /></PageTransition>} />
                 <Route path="/platform" element={<PageTransition><Platform /></PageTransition>} />
                 <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
                 <Route path="/services/gtm-operating-model" element={<PageTransition><GTMOperatingModel /></PageTransition>} />
