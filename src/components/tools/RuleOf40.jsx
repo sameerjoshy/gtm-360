@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { AreaChart, Check, X, ArrowRight, ScatterChart } from 'lucide-react';
+import { AreaChart, Check, X, ArrowRight, ScatterChart, Printer } from 'lucide-react';
 import { ScatterChart as RechartsScatter, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Label } from 'recharts';
 import useSubmitLead from '../../hooks/useSubmitLead';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 const RuleOf40 = () => {
-    const [inputs, setInputs] = useState({
+    const [inputs, setInputs] = useLocalStorage('gtm360_rule40_inputs', {
         growthRate: 30, // %
         profitMargin: 15 // %
     });
@@ -30,11 +31,16 @@ const RuleOf40 = () => {
 
     return (
         <div className="bg-slate-900 rounded-2xl border border-slate-700 shadow-xl overflow-hidden flex flex-col h-full">
-            <div className="p-6 border-b border-slate-700 bg-slate-900 z-20">
-                <div className="flex items-center gap-2 text-blue-400 font-mono text-xs uppercase tracking-widest mb-1">
-                    <AreaChart className="w-4 h-4" /> Valuation Logic
+            <div className="p-6 border-b border-slate-700 bg-slate-900 z-20 flex justify-between items-start">
+                <div>
+                    <div className="flex items-center gap-2 text-blue-400 font-mono text-xs uppercase tracking-widest mb-1">
+                        <AreaChart className="w-4 h-4" /> Valuation Logic
+                    </div>
+                    <h2 className="text-2xl font-bold text-white">Rule of 40 Analyzer</h2>
                 </div>
-                <h2 className="text-2xl font-bold text-white">Rule of 40 Analyzer</h2>
+                <button onClick={() => window.print()} className="bg-slate-800 hover:bg-slate-700 text-slate-300 p-2 rounded-lg transition-colors border border-slate-600 no-print" title="Print Report">
+                    <Printer className="w-4 h-4" />
+                </button>
             </div>
 
             <div className="flex-grow p-6 grid grid-cols-1 gap-6">

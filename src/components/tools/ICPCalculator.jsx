@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Target, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Target, CheckCircle2, ArrowRight, Printer } from 'lucide-react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import useSubmitLead from '../../hooks/useSubmitLead';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 const ICPCalculator = () => {
     // SCORING CRITERIA
-    const [scores, setScores] = useState({
+    const [scores, setScores] = useLocalStorage('gtm360_icp_scores', {
         budget: 10,
         authority: 10,
         need: 10,
@@ -45,11 +46,16 @@ const ICPCalculator = () => {
 
     return (
         <div className="bg-slate-900 rounded-2xl border border-slate-700 shadow-xl overflow-hidden flex flex-col h-full">
-            <div className="p-6 border-b border-slate-700 bg-slate-900 z-20">
-                <div className="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-widest mb-1">
-                    <Target className="w-4 h-4" /> Qualification Radar
+            <div className="p-6 border-b border-slate-700 bg-slate-900 z-20 flex justify-between items-start">
+                <div>
+                    <div className="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-widest mb-1">
+                        <Target className="w-4 h-4" /> Qualification Radar
+                    </div>
+                    <h2 className="text-2xl font-bold text-white">ICP Signal Scorer</h2>
                 </div>
-                <h2 className="text-2xl font-bold text-white">ICP Signal Scorer</h2>
+                <button onClick={() => window.print()} className="bg-slate-800 hover:bg-slate-700 text-slate-300 p-2 rounded-lg transition-colors border border-slate-600 no-print" title="Print Report">
+                    <Printer className="w-4 h-4" />
+                </button>
             </div>
 
             <div className="flex-grow p-6 grid grid-cols-1 md:grid-cols-2 gap-4">

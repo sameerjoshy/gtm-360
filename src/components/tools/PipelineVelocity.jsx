@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Gauge, Zap, TrendingUp, ArrowRight, Sliders, ChevronRight } from 'lucide-react';
+import { Gauge, Zap, TrendingUp, ArrowRight, Sliders, ChevronRight, Printer } from 'lucide-react';
 import useSubmitLead from '../../hooks/useSubmitLead';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 const PipelineVelocity = () => {
     // INPUTS
-    const [inputs, setInputs] = useState({
+    const [inputs, setInputs] = useLocalStorage('gtm360_velocity_inputs', {
         opportunities: 50,
         dealValue: 25000,
         winRate: 20, // %
