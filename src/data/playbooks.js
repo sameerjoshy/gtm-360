@@ -747,5 +747,357 @@ export const playbooks = [
             title: "Pipeline & Deal Quality Repair",
             link: "/services/pipeline-quality"
         }
+    },
+    // --- MICRO-PLAYBOOKS: MARKETING ---
+    {
+        id: "marketing-f-pattern",
+        slug: "the-f-pattern",
+        category: "Marketing",
+        title: "The F-Pattern Scan",
+        subtitle: "Your buyers don't read. They scan. Here is how to design for the lazy brain.",
+        readTime: "3 min read",
+        difficulty: "Tactical",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>Eye-tracking studies prove that B2B buyers scan websites in an 'F-Pattern'. They read the top headline (Horizontal), scan down the left side (Vertical), and only read across again if something catches their eye.</p>
+                <p>If your value prop is buried in a paragraph on the right side of the screen, it does not exist.</p>
+                <h3>The Fix</h3>
+                <ol>
+                    <li><strong>Load the Left:</strong> Put your strongest words (verbs) as the first word of every bullet point.</li>
+                    <li><strong>Kill the Paragraphs:</strong> No block of text should be deeper than 3 lines.</li>
+                    <li><strong>Bold the Insight:</strong> Bold the one phrase you need them to remember.</li>
+                </ol>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                Your website copy is great. But nobody is reading it.<br/>
+                Because B2B buyers don't read. They scan.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                Science shows the brain uses an 'F-Pattern' to conserve energy.<br/>
+                Top line across. Scan down the left. Middle line across.<br/>
+                If your key benefit is buried in a paragraph on the right? Invisible.<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                Audit your site today.<br/>
+                Load your power verbs on the left margin.<br/>
+                If it's not in the 'F', it's not in their head.
+            `
+        }
+    },
+    {
+        id: "marketing-against-narrative",
+        slug: "the-against-narrative",
+        category: "Marketing",
+        title: "The 'Against' Narrative",
+        subtitle: "Positioning is not about who you are. It's about who you are fighting.",
+        readTime: "3 min read",
+        difficulty: "Strategic",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>Great brands are defined by their enemies. Salesforce was 'No Software'. Apple was 'Mac vs PC'.</p>
+                <p>If you position yourself as 'Better', you are comparing features. If you position yourself 'Against' the old way, you are selling a movement.</p>
+                <h3>The Fix</h3>
+                <p>Don't fight a competitor (that looks petty). Fight the <em>Status Quo</em>.</p>
+                <p><strong>Bad:</strong> "We are faster than X."</p>
+                <p><strong>Good:</strong> "Stop waiting 3 days for reports."</p>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                Nobody cares what you are 'For'.<br/>
+                They care what you are 'Against'.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                The strongest brands in history pick a fight.<br/>
+                Salesforce fought 'Software'. Apple fought 'IBM'.<br/>
+                When you define an enemy, you define a tribe.<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                Stop fighting your competitors.<br/>
+                Fight the 'Old Way' of doing things.<br/>
+                Name the enemy. Win the fan.
+            `
+        }
+    },
+    {
+        id: "marketing-zero-click",
+        slug: "zero-click-content",
+        category: "Marketing",
+        title: "Zero-Click Value",
+        subtitle: "Stop asking for the click. Give the lesson in the feed.",
+        readTime: "3 min read",
+        difficulty: "Tactical",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>Platforms (LinkedIn, Twitter, YouTube) hate links. They want to keep users on the platform. If you post a link, the algorithm buries you.</p>
+                <p>'Zero-Click Content' gives the entire value in the post itself. No teaser. No 'Link in comments'.</p>
+                <h3>The Fix</h3>
+                <p>Optimize for consumption, not clicks. If 1,000 people read your insight, you win brand equity. If 10 people click your link, you win nothing.</p>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                Your 'Link in Bio' strategy is killing your reach.<br/>
+                Here is why.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                Algorithms want retention. They hate when you send people away.<br/>
+                When you post a link, you get punished.<br/>
+                When you post the full lesson, you get rewarded.<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                Stop teasing content.<br/>
+                Give the whole meal in the feed.<br/>
+                Optimize for influence, not for clicks.
+            `
+        }
+    },
+
+    // --- MICRO-PLAYBOOKS: SALES ---
+    {
+        id: "sales-upfront-contract",
+        slug: "upfront-contract",
+        category: "Sales",
+        title: "The Upfront Contract",
+        subtitle: "How to stop meetings from running over time and ending with 'maybe'.",
+        readTime: "3 min read",
+        difficulty: "Tactical",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>Most sales meetings end vaguely because they started vaguely.</p>
+                <p>An Upfront Contract (Sandler Rule) sets the rules of engagement in the first 2 minutes.</p>
+                <h3>The Script</h3>
+                <p>"We have 30 minutes. My goal is to show you X. You probably have questions about Y. By the end, we should decide if it makes sense to schedule a scoping call or if this isn't a fit. Does that sound fair?"</p>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                Does your sales call end with "I'll think about it"?<br/>
+                That's your fault. You didn't set the rules.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                The "Upfront Contract" saves deal cycles.<br/>
+                In the first minute, agree on the outcome.<br/>
+                "By the end of this call, let's decide if this is a fit or not. If it's a no, tell me no."<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                Give them permission to say No.<br/>
+                And you will get to the Yes faster.
+            `
+        }
+    },
+    {
+        id: "sales-pricing-anchor",
+        slug: "pricing-anchor",
+        category: "Sales",
+        title: "Pricing Anchoring",
+        subtitle: "Mentioning price early to reset psychology.",
+        readTime: "3 min read",
+        difficulty: "Psychological",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>If you wait until the end to show price, the customer is holding their breath the whole time. They aren't listening; they are worrying.</p>
+                <p>Anchoring drops a high number early to make the real number feel safe.</p>
+                <h3>The Fix</h3>
+                <p>"Typically, enterprise deployments like this run $100k+, but for your scope..." (Customer exhales). "We are looking closer to $40k." (Customer feels relief).</p>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                Stop hiding your price until the last slide.<br/>
+                You are creating anxiety, not suspense.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                It's called "Anchoring".<br/>
+                Drop a big number early. "Usually this costs $100k."<br/>
+                Watch them flinch.<br/>
+                Then land the plane. "But for you, it's $30k."<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                The $30k feels cheap after the $100k.<br/>
+                It feels expensive after $0.<br/>
+                Set the anchor.
+            `
+        }
+    },
+    {
+        id: "sales-not-close",
+        slug: "the-not-close",
+        category: "Sales",
+        title: "The 'Not' Close",
+        subtitle: "Using reverse psychology to trigger honesty.",
+        readTime: "3 min read",
+        difficulty: "Tactical",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>When you push, buyers pull away. When you pull away, they lean in.</p>
+                <p>The 'Not' Close is a technique where you verbally disqualify the deal to see if the prospect fights for it.</p>
+                <h3>The Script</h3>
+                <p>"Honestly, based on what you said about budget, I'm not sure we're the right fit right now. It sounds like a spreadsheet might be better for Q1."</p>
+                <p><strong>Reaction A:</strong> "Yeah, you're right." (Great, you saved 3 months).</p>
+                <p><strong>Reaction B:</strong> "No, we really need this because..." (Great, they just sold themselves).</p>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                Want to close more deals?<br/>
+                Try trying NOT to close them.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                People want what they can't have.<br/>
+                When you say "I'm not sure we are a fit", the buyer's brain switches mode.<br/>
+                They stop defending and start chasing.<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                Pull away.<br/>
+                "It sounds like you should stick with Excel for now."<br/>
+                If they let you go, you never had them.
+            `
+        }
+    },
+    {
+        id: "sales-champion-test",
+        slug: "champion-testing",
+        category: "Sales",
+        title: "Champion Testing",
+        subtitle: "Verify your champion before you forecast the deal.",
+        readTime: "3 min read",
+        difficulty: "Strategic",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>A Champion is not someone who likes you. A Champion is someone who has power and is willing to use it for you.</p>
+                <p>You must 'Test' them. Ask for a micro-commitment that requires them to spend social capital.</p>
+                <h3>The Test</h3>
+                <p>"Can you get me the Org Chart by Friday?" or "Can you stick your neck out and schedule a meeting with the VP?"</p>
+                <p>If they say no, they aren't a Champion. They are a Coach (or a waste of time).</p>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                You don't have a Champion.<br/>
+                You have a work-friend.<br/>
+                Here is how to tell the difference.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                A Champion takes action when you aren't in the room.<br/>
+                Test them.<br/>
+                Ask for something hard.<br/>
+                "Can you get me the CFO's cell phone number?"<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                If they hesitate, remove the deal from your forecast.<br/>
+                Real Champions spend political capital.
+            `
+        }
+    },
+
+    // --- MICRO-PLAYBOOKS: CS ---
+    {
+        id: "cs-quick-win",
+        slug: "90-day-quick-win",
+        category: "CS",
+        title: "The 90-Day Quick Win",
+        subtitle: "Orchestrating the first moment of delight to prevent churn.",
+        readTime: "3 min read",
+        difficulty: "Tactical",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>Churn doesn't happen at renewal. Churn happens in the first 90 days when the customer thinks "This is harder than I thought."</p>
+                <p>You need to manufacture a "Quick Win" — a small, specific ROI moment — in the first 2 weeks.</p>
+                <h3>The Fix</h3>
+                <p>Don't try to implement the whole platform. Implement the one feature that saves them 1 hour this Friday.</p>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                You lose customers in the first 90 days.<br/>
+                You just don't know it until day 365.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                Buyer's Remorse sets in fast.<br/>
+                Counter it with a 'Quick Win'.<br/>
+                Don't boil the ocean.<br/>
+                Just make them a cup of tea.<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                Find one feature that solves one headache in Week 1.<br/>
+                Get that win. Then build the rest.
+            `
+        }
+    },
+    {
+        id: "cs-executive-brief",
+        slug: "the-executive-brief",
+        category: "CS",
+        title: "The Executive Brief",
+        subtitle: "How to write a QBR that a CEO will actually read.",
+        readTime: "3 min read",
+        difficulty: "Strategic",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>CEOs don't read usage dashboards. They read Executive Briefs.</p>
+                <p>An Executive Brief is a 1-page PDF sent 24 hours before the QBR.</p>
+                <h3>The Format</h3>
+                <ul>
+                    <li><strong>Headline:</strong> Value delivered in $ terms.</li>
+                    <li><strong>Red:</strong> What is broken (be honest).</li>
+                    <li><strong>Green:</strong> What is working.</li>
+                    <li><strong>Ask:</strong> What you need from them.</li>
+                </ul>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                The CEO is not coming to your QBR.<br/>
+                Unless you send this email first.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                Send an 'Executive Brief' 24 hours prior.<br/>
+                One page.<br/>
+                "We saved you $50k. We are blocked on Project X. We need your help here."<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                尊重 (Respect) their time.<br/>
+                Give them the bottom line first.<br/>
+                They will show up to clear the blocker.
+            `
+        }
+    },
+    {
+        id: "cs-referral-loop",
+        slug: "referral-loop",
+        category: "CS",
+        title: "The Referral Loop",
+        subtitle: "Triggering expansion requests automatically after NPS scores.",
+        readTime: "3 min read",
+        difficulty: "Tactical",
+        author: "GTM-360 Intelligence",
+        lastUpdated: "January 2026",
+        content: {
+            onePager: `
+                <h3>The Concept</h3>
+                <p>The best time to ask for a referral is the exact second a customer says they love you.</p>
+                <p>Most CS agents wait for a "Referral Meeting." That is too late.</p>
+                <h3>The Trigger</h3>
+                <p>Automate it. When a user gives an NPS score of 9 or 10, trigger an immediate personal email from the Founder: "Saw you gave us a 10. That means the world. Is there one other VP of Sales you know who puts up with this same problem?"</p>
+            `,
+            scriptShort: `
+                <strong>[HOOK]</strong><br/>
+                You are asking for referrals at the wrong time.<br/>
+                You ask when you are desperate.<br/>
+                You should ask when they are happy.<br/><br/>
+                <strong>[INSIGHT]</strong><br/>
+                The 'Referral Loop' connects Sentiment to Ask.<br/>
+                They gave you a 10 NPS?<br/>
+                The auto-reply shouldn't be "Thanks".<br/>
+                It should be "Thanks. Who else do you know?"<br/><br/>
+                <strong>[ACTION]</strong><br/>
+                Strike while the iron is hot.<br/>
+                Psychology says they want to help you right now.<br/>
+                Let them.
+            `
+        }
     }
 ];
