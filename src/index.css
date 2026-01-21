@@ -198,74 +198,76 @@ a {
   }
 
 
-  /* --- PRINT STYLES --- */
-  @media print {
+}
 
-    /* Hide UI chrome */
-    header,
-    footer,
-    nav,
-    .no-print {
-      display: none !important;
-    }
+/* --- PRINT STYLES --- */
+@media print {
 
-    /* Reset colors for paper */
-    body {
-      background-color: white !important;
-      color: black !important;
-    }
-
-    /* Ensure background colors (charts) print */
-    * {
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
-    }
-
-    /* Expand containers */
-    .container,
-    .tools-page {
-      max-width: 100% !important;
-      width: 100% !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-
-    /* Tool-specific overrides */
-    .bg-slate-900,
-    .bg-slate-950,
-    .bg-slate-800 {
-      background-color: white !important;
-      border: 1px solid #e2e8f0 !important;
-      /* light gray border */
-      color: black !important;
-      box-shadow: none !important;
-    }
-
-    .text-white,
-    .text-slate-200,
-    .text-slate-300,
-    .text-slate-400 {
-      color: #1e293b !important;
-      /* slate-800 */
-    }
-
-    /* Make charts readable */
-    .recharts-cartesian-grid line {
-      stroke: #e2e8f0 !important;
-    }
-
-    .recharts-text {
-      fill: #1e293b !important;
-    }
-
-    /* Layout adjustments */
-    .grid-cols-1 {
-      display: block !important;
-    }
-
-    /* Page breaks */
-    .tool-container {
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
+  /* Hide UI chrome */
+  header,
+  footer,
+  nav,
+  .no-print {
+    display: none !important;
   }
+
+  /* Reset colors for paper */
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  /* Ensure background colors (charts) print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Expand containers */
+  .container,
+  .tools-page {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Tool-specific overrides */
+  .bg-slate-900,
+  .bg-slate-950,
+  .bg-slate-800 {
+    background-color: white !important;
+    border: 1px solid #e2e8f0 !important;
+    /* light gray border */
+    color: black !important;
+    box-shadow: none !important;
+  }
+
+  .text-white,
+  .text-slate-200,
+  .text-slate-300,
+  .text-slate-400 {
+    color: #1e293b !important;
+    /* slate-800 */
+  }
+
+  /* Make charts readable */
+  .recharts-cartesian-grid line {
+    stroke: #e2e8f0 !important;
+  }
+
+  .recharts-text {
+    fill: #1e293b !important;
+  }
+
+  /* Layout adjustments */
+  .grid-cols-1 {
+    display: block !important;
+  }
+
+  /* Page breaks */
+  .tool-container {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
