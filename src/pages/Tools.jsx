@@ -3,6 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import CapacityCalculator from '../components/tools/CapacityCalculator';
 import SaaSCompass from '../components/tools/SaaSCompass';
 import RevenueCalculator from '../components/tools/RevenueCalculator';
+import PipelineVelocity from '../components/tools/PipelineVelocity';
+import ICPCalculator from '../components/tools/ICPCalculator';
+import RuleOf40 from '../components/tools/RuleOf40';
 
 const Tools = () => {
     return (
@@ -29,24 +32,29 @@ const Tools = () => {
 
             {/* TOOLS GRID */}
             <section className="py-20">
-                <div className="container max-w-6xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                        {/* TOOL 1: QUOTA CLIFF */}
-                        <div className="lg:col-span-2">
+                <div className="container max-w-7xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        {/* ROW 1: STRATEGY & PLANNING */}
+                        <div className="lg:col-span-8">
                             <CapacityCalculator />
                         </div>
-
-                        {/* TOOL 2: SAAS COMPASS */}
-                        <div>
+                        <div className="lg:col-span-4 h-full">
                             <SaaSCompass />
                         </div>
 
-                        {/* TOOL 3: LEAKAGE (Existing) */}
-                        <div>
-                            {/* Wrapping existing calculator component to fit the theme if needed, but it already has its own container. 
-                                 We might need to adjust it to fit the height or style. 
-                                 For now, just dropping it in.
-                             */}
+                        {/* ROW 2: EXECUTION & DIAGNOSTICS */}
+                        <div className="lg:col-span-4 h-full">
+                            <PipelineVelocity />
+                        </div>
+                        <div className="lg:col-span-4 h-full">
+                            <ICPCalculator />
+                        </div>
+                        <div className="lg:col-span-4 h-full">
+                            <RuleOf40 />
+                        </div>
+
+                        {/* ROW 3: SYSTEM AUDIT (Full Width) */}
+                        <div className="lg:col-span-12">
                             <div className="h-full">
                                 <RevenueCalculator />
                             </div>
