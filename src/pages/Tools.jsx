@@ -12,7 +12,7 @@ const Tools = () => {
         <div className="tools-page min-h-screen bg-slate-950">
             <Helmet>
                 <title>The Workbench | GTM360</title>
-                <meta name="description" content="Engineering-grade calculators for GTM leaders. Plan capacity, audit unit economics, and measure revenue leakage without the fluff." />
+                <meta name="description" content="Diagnostic models to audit your GTM system—positioning, funnel economics, and revenue leakage. Interactive calculators for growth-stage B2B tech companies." />
             </Helmet>
 
             {/* HEADER */}
@@ -24,8 +24,8 @@ const Tools = () => {
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
                         The Revenue Engineering <span className="text-indigo-500">Workbench</span>
                     </h1>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                        Precision tools for high-stakes decisions. No fluff. Just the math you need to defend your strategy.
+                    <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+                        Diagnostic models to audit your GTM system—positioning, funnel economics, and revenue leakage—before you spend another dollar.
                     </p>
                 </div>
             </section>
@@ -65,11 +65,13 @@ const Tools = () => {
 
             {/* BANNER */}
             <section className="py-20 border-t border-slate-900 bg-slate-950 text-center">
-                <div className="container">
-                    <h3 className="text-2xl font-bold text-white mb-4">Need a custom model?</h3>
-                    <p className="text-slate-400 mb-8">We build bespoke revenue architectures for Enterprise clients.</p>
+                <div className="container max-w-3xl">
+                    <h3 className="text-3xl font-bold text-white mb-4">Get Your GTM Diagnostic</h3>
+                    <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+                        Use these models to audit your system—or engage us to redesign and operationalize your GTM based on the findings.
+                    </p>
                     <a href="/contact" className="inline-block bg-white text-slate-950 px-8 py-3 rounded-full font-bold hover:bg-indigo-50 transition-colors">
-                        Request Access
+                        Request Strategic Engagement
                     </a>
                 </div>
             </section>
