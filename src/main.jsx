@@ -11,8 +11,15 @@ ReactGA.initialize(MEASUREMENT_ID);
 
 const Root = () => {
     // Track initial page load
+    // Track initial page load and signal pre-renderer
     useEffect(() => {
         ReactGA.send({ hitType: "pageview", page: window.location.pathname });
+
+        // Signal to vite-plugin-prerender that React has mounted
+        // Small delay to ensure DOM paint
+        setTimeout(() => {
+            document.dispatchEvent(new Event('custom-render-trigger'));
+        }, 500);
     }, []);
 
     return (
