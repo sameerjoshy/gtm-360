@@ -11,6 +11,7 @@ export const playbooks = [
         difficulty: "Strategic",
         author: "GTM-360 Intelligence",
         lastUpdated: "January 2026",
+        hasBlueprint: true,
         content: {
             onePager: `
                 <h3>The Core Concept</h3>

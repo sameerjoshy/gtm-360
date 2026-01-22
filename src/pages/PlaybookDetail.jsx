@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
+import GrowthBlueprintDesign from '../components/visuals/GrowthBlueprintDesign';
 import { Helmet } from 'react-helmet-async';
 import { playbooks } from '../data/playbooks';
 import { BookOpen, Video, ArrowLeft, Share2, CheckCircle } from 'lucide-react';
@@ -86,6 +87,13 @@ const PlaybookDetail = () => {
                             {activeTab === 'strategy' && (
                                 <div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-600 prose-a:text-[var(--color-primary)] prose-strong:text-gray-900">
                                     <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(playbook.content.onePager) }} />
+
+                                    {/* Visual Schematic Injection */}
+                                    {playbook.hasBlueprint && (
+                                        <div className="my-12 not-prose">
+                                            <GrowthBlueprintDesign />
+                                        </div>
+                                    )}
                                 </div>
                             )}
 
