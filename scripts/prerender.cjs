@@ -15,6 +15,8 @@ const ROUTES = [
     '/services/gtm-signals-and-ai',
     '/diagnostic',
     '/problems',
+    '/how-we-work',
+    '/partners',
     '/about',
     '/contact',
     '/insights/more-pipeline-doesnt-fix-growth',
