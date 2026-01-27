@@ -144,13 +144,62 @@ export const insights = {
         description: "Marketing copy vs. Sales reality. Why the 'perfect pitch' falls flat in the boardroom.",
         relatedService: { name: "GTM Operating Model Realignment", link: "/services/gtm-operating-model" },
         sections: {
-            problemRecognition: "<p>Coming soon...</p>",
-            wrongExplanation: "<p>Coming soon...</p>",
-            whyItFails: "<p>Coming soon...</p>",
-            actualConstraint: "<p>Coming soon...</p>",
-            consequences: "<p>Coming soon...</p>",
-            whatChanges: "<p>Coming soon...</p>",
-            ourView: "<p>Coming soon...</p>"
+            problemRecognition: `
+                <p>Your marketing team spent months crafting the perfect "Strategic Narrative."</p>
+                <p>The website says you are the "Operating System for X." The deck looks like a TED talk. The copy is tight, punchy, and emotional.</p>
+                <p>But when you listen to Gong calls, two things happen:</p>
+                <ul>
+                    <li>Reps stumble over the "why us" slide and quickly skip to the product features.</li>
+                    <li>Buyers nod politely at the "big vision" but then immediately ask: "Okay, but does it integrate with Salesforce?"</li>
+                </ul>
+                <p>The messaging isn't <em>wrong</em>. It just isn't doing any work.</p>
+            `,
+            wrongExplanation: `
+                <p>The standard diagnosis is <strong>Adoption Failure</strong>.</p>
+                <ul>
+                    <li>"Sales didn't read the new battlecards."</li>
+                    <li>"We need to certify everyone on the new pitch."</li>
+                    <li>"The deck needs better graphics."</li>
+                </ul>
+                <p>Marketing re-launches the messaging. Sales Enablement runs more workshops. Marketing complains that Sales is "going rogue." Sales complains that Marketing is "high in the clouds."</p>
+            `,
+            whyItFails: `
+                <p>The messaging fails not because people don't understand it, but because it <strong>solves the wrong problem for the seller</strong>.</p>
+                <p>Most "Strategic Messaging" is designed to make the <em>company</em> look impressive to investors or analysts. It is not designed to help a seller survive a collision with a skeptic.</p>
+                <p>If your messaging requires a 5-minute monologue to explain, it will die in the first 30 seconds of a discovery call.</p>
+                <p>If it focuses on "The New World vs. The Old World" but fails to explain "Why Change <em>Now</em>," it will create interest but not urgency.</p>
+            `,
+            actualConstraint: `
+                <p>The constraint is <strong>Contextual Utility</strong>.</p>
+                <p>Sellers don't reject messaging because they are lazy. They reject it because it feels risky.</p>
+                <p>When a rep is face-to-face with a prospect, they need <span class="font-bold">ammo</span>, not poetry.</p>
+                <ul>
+                    <li>They need to know exactly what question to ask to expose the competitor's flaw.</li>
+                    <li>They need a 30-second story that makes the prospect say "That's exactly what happened to us last week."</li>
+                </ul>
+                <p>Marketing is building <em>Billboards</em> (Brand) while Sales needs <em>Crowbars</em> (Deals).</p>
+            `,
+            consequences: `
+                <p>When messaging is disconnected from deal reality:</p>
+                <ol>
+                    <li><strong>Reps revert to "Feature Dumping":</strong> It's the only safe ground they know.</li>
+                    <li><strong>Discovery calls become interrogations:</strong> Without a strong narrative hook, reps just ask "BANT" questions.</li>
+                    <li><strong>Deals stall in "Education Mode":</strong> The prospect understands your vision but doesn't see a concrete business case to buy <em>today</em>.</li>
+                </ol>
+            `,
+            whatChanges: `
+                <p>To fix this, stop writing "Messaging" and start building "Commercial Teaching."</p>
+                <ul>
+                    <li><strong>The "Cost of Inaction" Calculator:</strong> Don't just say you save money. Give the rep a spreadsheet that proves the prospect is bleeding cash <em>right now</em>.</li>
+                    <li><strong>The "Wedge" Story:</strong> A specific narrative designed to disqualify your competitor's approach without naming them.</li>
+                    <li><strong>The 2-Minute Drill:</strong> Can the pitch be delivered on a phone call without a slide deck? If no, rewrite it.</li>
+                </ul>
+            `,
+            ourView: `
+                <p>Great GTM messaging is not about how smart you sound.</p>
+                <p>It is about how smart you make the buyer feel.</p>
+                <p>If your message doesn't help the buyer destroy their status quo, it is just noise.</p>
+            `
         }
     },
     "revops-dashboards-dont-drive-decisions": {
