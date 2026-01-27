@@ -9,6 +9,7 @@ import TestimonialMarquee from '../components/social/TestimonialMarquee';
 import VideoEmbed from '../components/media/VideoEmbed';
 
 import TechStackMarquee from '../components/social/TechStackMarquee';
+import LeadMagnet from '../components/marketing/LeadMagnet';
 
 const Home = () => {
     return (
@@ -390,7 +391,14 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* BLOCK 8: FINAL CTA */}
+            {/* BLOCK 8: LEAD MAGNET */}
+            <section className="section bg-gray-50 border-t border-gray-200">
+                <div className="container max-w-5xl">
+                    <LeadMagnet />
+                </div>
+            </section>
+
+            {/* BLOCK 9: FINAL CTA */}
             <section className="section bg-[var(--color-primary)] text-white text-center py-24">
                 <div className="container max-w-2xl">
                     <h2 className="text-3xl md:text-4xl font-semibold text-white mb-6">Fix the system before adding more force.</h2>

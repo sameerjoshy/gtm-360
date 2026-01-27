@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import LeadMagnet from './marketing/LeadMagnet';
 
 const InsightTemplate = ({ data }) => {
     // data prop should contain: title, slug, description, category, readTime, sections (1-7), relatedService
@@ -124,6 +125,13 @@ const InsightTemplate = ({ data }) => {
                 </section>
 
             </article>
+
+            {/* 7.5 LEAD MAGNET */}
+            <section className="py-12 bg-gray-50 border-t border-gray-200">
+                <div className="container max-w-4xl">
+                    <LeadMagnet />
+                </div>
+            </section>
 
             {/* 8. CTA (SOFT, CONSISTENT) */}
             <section className="py-24 bg-white border-t border-gray-100 text-center">

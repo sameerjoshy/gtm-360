@@ -86,44 +86,44 @@ const RevenueLeakageCalculator = () => {
     };
 
     return (
-        <div className="bg-slate-900 rounded-3xl p-1 text-white relative overflow-hidden shadow-2xl border border-slate-800 h-full">
-            <div className="bg-slate-950 rounded-[inherit] p-8 md:p-12 relative z-10 h-full flex flex-col">
+        <div className="bg-white rounded-3xl p-1 text-slate-900 relative overflow-hidden shadow-xl border border-slate-200 h-full border-t-4 border-t-red-500">
+            <div className="bg-white rounded-[inherit] p-8 md:p-12 relative z-10 h-full flex flex-col">
 
                 {/* Background Accent */}
                 <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
 
                 <div className="mb-10 flex items-center justify-between">
                     <div>
-                        <span className="text-red-500 font-mono text-[10px] tracking-widest uppercase mb-2 block flex items-center gap-2">
+                        <span className="text-red-600 font-mono text-[10px] tracking-widest uppercase mb-2 block flex items-center gap-2">
                             <ShieldAlert className="w-3 h-3" /> System Friction Audit
                         </span>
-                        <h3 className="text-2xl font-bold text-white tracking-tight">Revenue Leakage <span className="text-red-500">Analyzer</span></h3>
+                        <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Revenue Leakage <span className="text-red-600">Analyzer</span></h3>
                     </div>
                     {view === 'result' && (
-                        <button onClick={handleExport} className="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors border border-slate-700" title="Export CSV">
-                            <Download className="w-4 h-4 text-slate-400" />
+                        <button onClick={handleExport} className="p-2 bg-slate-50 hover:bg-slate-100 rounded-lg transition-colors border border-slate-200" title="Export CSV">
+                            <Download className="w-4 h-4 text-slate-500" />
                         </button>
                     )}
                 </div>
 
                 {view === 'input' ? (
                     <form onSubmit={handleCalculate} className="flex-grow flex flex-col">
-                        <p className="text-slate-400 mb-10 text-sm leading-relaxed max-w-md">
+                        <p className="text-slate-500 mb-10 text-sm leading-relaxed max-w-md">
                             Most GTM systems lose 15-25% of their potential revenue to invisible friction. Map your leakage in 30 seconds.
                         </p>
 
                         <div className="space-y-8 mb-12">
                             <div>
-                                <label className="block text-[10px] font-bold text-slate-500 uppercase mb-3 tracking-widest">Annual Recurring Revenue (ARR)</label>
+                                <label className="block text-[10px] font-bold text-slate-400 uppercase mb-3 tracking-widest">Annual Recurring Revenue (ARR)</label>
                                 <div className="relative group">
                                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                                        <span className="text-slate-500 font-bold">$</span>
+                                        <span className="text-slate-400 font-bold">$</span>
                                     </div>
                                     <input
                                         type="number"
                                         value={inputs.arr}
                                         onChange={(e) => setInputs({ ...inputs, arr: e.target.value })}
-                                        className="w-full bg-slate-900 border border-slate-800 group-hover:border-slate-700 rounded-xl py-4 pl-10 pr-4 text-white focus:border-red-500/50 outline-none transition-all font-mono text-lg"
+                                        className="w-full bg-slate-50 border border-slate-200 group-hover:border-slate-300 rounded-xl py-4 pl-10 pr-4 text-slate-900 focus:border-red-500 outline-none transition-all font-mono text-lg"
                                         placeholder="5,000,000"
                                         min="0"
                                     />
@@ -132,27 +132,27 @@ const RevenueLeakageCalculator = () => {
 
                             <div className="grid grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-[10px] font-bold text-slate-500 uppercase mb-3 tracking-widest">Sales Cycle (Days)</label>
+                                    <label className="block text-[10px] font-bold text-slate-400 uppercase mb-3 tracking-widest">Sales Cycle (Days)</label>
                                     <input
                                         type="number"
                                         value={inputs.salesCycle}
                                         onChange={(e) => setInputs({ ...inputs, salesCycle: e.target.value })}
-                                        className="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-white focus:border-red-500/50 outline-none transition-all font-mono"
+                                        className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-slate-900 focus:border-red-500 outline-none transition-all font-mono"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-[10px] font-bold text-slate-500 uppercase mb-3 tracking-widest">Win Rate (%)</label>
+                                    <label className="block text-[10px] font-bold text-slate-400 uppercase mb-3 tracking-widest">Win Rate (%)</label>
                                     <input
                                         type="number"
                                         value={inputs.winRate}
                                         onChange={(e) => setInputs({ ...inputs, winRate: e.target.value })}
-                                        className="w-full bg-slate-900 border border-slate-800 rounded-xl py-3 px-4 text-white focus:border-red-500/50 outline-none transition-all font-mono"
+                                        className="w-full bg-slate-50 border border-slate-200 rounded-xl py-3 px-4 text-slate-900 focus:border-red-500 outline-none transition-all font-mono"
                                     />
                                 </div>
                             </div>
                         </div>
 
-                        <button type="submit" className="w-full bg-red-600 hover:bg-red-500 text-white py-5 rounded-xl flex items-center justify-center gap-3 font-bold text-lg transition-all shadow-xl shadow-red-900/20 active:scale-[0.98]">
+                        <button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white py-5 rounded-xl flex items-center justify-center gap-3 font-bold text-lg transition-all shadow-xl shadow-red-900/10 active:scale-[0.98]">
                             Audit System Health <ArrowRight className="w-5 h-5" />
                         </button>
                     </form>
@@ -161,29 +161,29 @@ const RevenueLeakageCalculator = () => {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
                             {/* RESULTS HERO */}
                             <div className="space-y-6">
-                                <div className="p-6 bg-red-500/5 rounded-2xl border border-red-500/20">
-                                    <p className="text-[10px] font-bold text-red-400 uppercase tracking-widest mb-2">Annual Leakage Estimate</p>
-                                    <h2 className="text-5xl font-bold text-white mb-2">{formatCurrency(leakageResults.amount)}</h2>
-                                    <div className="flex items-center gap-2 text-sm text-red-500 font-bold">
+                                <div className="p-6 bg-red-50 rounded-2xl border border-red-100">
+                                    <p className="text-[10px] font-bold text-red-600 uppercase tracking-widest mb-2">Annual Leakage Estimate</p>
+                                    <h2 className="text-5xl font-bold text-slate-900 mb-2">{formatCurrency(leakageResults.amount)}</h2>
+                                    <div className="flex items-center gap-2 text-sm text-red-600 font-bold">
                                         <TrendingDown className="w-4 h-4" /> {leakageResults.pct}% of Gross ARR
                                     </div>
                                 </div>
 
                                 <div className="space-y-4">
                                     {leakageResults.breakdown.map((item, idx) => (
-                                        <div key={idx} className="flex items-center justify-between p-3 bg-slate-900 rounded-lg border border-slate-800">
+                                        <div key={idx} className="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-100 shadow-sm">
                                             <div className="flex items-center gap-3">
                                                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: item.color }}></div>
-                                                <span className="text-xs text-slate-400 font-medium">{item.name}</span>
+                                                <span className="text-xs text-slate-500 font-medium">{item.name}</span>
                                             </div>
-                                            <span className="text-xs font-mono font-bold text-white">{formatCurrency(item.value)}</span>
+                                            <span className="text-xs font-mono font-bold text-slate-900">{formatCurrency(item.value)}</span>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
                             {/* PIE CHART */}
-                            <div className="h-64 bg-slate-900/50 rounded-2xl border border-slate-800 p-4">
+                            <div className="h-64 bg-slate-50 rounded-2xl border border-slate-200 p-4">
                                 <ResponsiveContainer width="100%" height="100%">
                                     <PieChart>
                                         <Pie
@@ -199,7 +199,7 @@ const RevenueLeakageCalculator = () => {
                                             ))}
                                         </Pie>
                                         <Tooltip
-                                            contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '12px' }}
+                                            contentStyle={{ backgroundColor: '#fff', borderColor: '#e2e8f0', borderRadius: '12px', color: '#1e293b', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                                             formatter={(value) => formatCurrency(value)}
                                         />
                                     </PieChart>
@@ -208,9 +208,9 @@ const RevenueLeakageCalculator = () => {
                         </div>
 
                         {/* LEAD GEN FOOTER */}
-                        <div className="mt-auto pt-8 border-t border-slate-800">
+                        <div className="mt-auto pt-8 border-t border-slate-100">
                             {status === 'success' ? (
-                                <div className="p-6 bg-emerald-500/5 border border-emerald-500/20 rounded-2xl text-emerald-400 text-center animate-in zoom-in-95 duration-300">
+                                <div className="p-6 bg-emerald-50 border border-emerald-100 rounded-2xl text-emerald-600 text-center animate-in zoom-in-95 duration-300">
                                     <div className="flex justify-center mb-2">
                                         <Zap className="w-8 h-8 fill-emerald-500/20" />
                                     </div>
@@ -220,7 +220,7 @@ const RevenueLeakageCalculator = () => {
                             ) : (
                                 <div className="flex flex-col md:flex-row gap-6 items-center">
                                     <div className="flex-grow">
-                                        <h4 className="font-bold text-white mb-1">Get the Reclamation Roadmap</h4>
+                                        <h4 className="font-bold text-slate-900 mb-1">Get the Reclamation Roadmap</h4>
                                         <p className="text-xs text-slate-500">We'll send the detailed breakdown and a bespoke fix strategy.</p>
                                     </div>
                                     <form onSubmit={handleEmailSubmit} className="flex gap-2 w-full md:w-auto">
@@ -229,13 +229,13 @@ const RevenueLeakageCalculator = () => {
                                             placeholder="Work Email"
                                             value={leadForm.email}
                                             onChange={(e) => setLeadForm({ ...leadForm, email: e.target.value })}
-                                            className="px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl focus:border-red-500/50 outline-none text-sm text-white w-full md:w-64"
+                                            className="px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:border-red-500 outline-none text-sm text-slate-900 w-full md:w-64"
                                             required
                                         />
                                         <button
                                             type="submit"
                                             disabled={status === 'submitting'}
-                                            className="bg-white text-slate-950 hover:bg-slate-100 px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all disabled:opacity-50 h-full"
+                                            className="bg-slate-900 text-white hover:bg-slate-800 px-6 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all disabled:opacity-50 h-full shadow-lg"
                                         >
                                             {status === 'submitting' ? '...' : 'Send'}
                                         </button>
@@ -245,7 +245,7 @@ const RevenueLeakageCalculator = () => {
 
                             <button
                                 onClick={() => setView('input')}
-                                className="mt-8 w-full text-center text-[10px] font-bold text-slate-600 hover:text-red-400 uppercase tracking-widest transition-colors"
+                                className="mt-8 w-full text-center text-[10px] font-bold text-slate-400 hover:text-red-500 uppercase tracking-widest transition-colors"
                             >
                                 ← Recalibrate Baseline
                             </button>
